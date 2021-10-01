@@ -1,1 +1,16 @@
-export const one = 1;
+import { readConfig } from './config';
+import { processPackage } from './process';
+
+(async () => {
+  const config = await readConfig();
+
+  const packages = Object.entries(config);
+
+  await Promise.all(packages.map(([pkg, options]) => processPackage(pkg, options))).catch(
+    console.error
+  );
+
+  console.log(
+    `Typed ${packages.length} packages. (${packages.map((p) => p[0]).join(', ')})`
+  );
+})().catch(console.error);
