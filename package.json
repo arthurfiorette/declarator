@@ -9,7 +9,7 @@
     "lint": "tsc --noEmit && eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "version": "auto-changelog -p && git add CHANGELOG.md",
-    "postinstall": "node dist/index.js"
+    "postinstall": "node lib/postinstall.js" 
   },
   "repository": {
     "type": "git",

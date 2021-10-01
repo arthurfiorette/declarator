@@ -1,7 +1,7 @@
 import { readConfig } from './config';
 import { processPackage } from './process';
 
-(async () => {
+export const run = async () => {
   const config = await readConfig();
 
   const packages = Object.entries(config);
@@ -13,4 +13,4 @@ import { processPackage } from './process';
   console.log(
     `Typed ${packages.length} packages. (${packages.map((p) => p[0]).join(', ')})`
   );
-})().catch(console.error);
+};
