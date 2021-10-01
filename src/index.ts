@@ -10,6 +10,12 @@ export const run = async () => {
     console.error
   );
 
+  if (packages.length === 0) {
+    console.error('No packages were modified');
+    process.exitCode = 1;
+    process.exit();
+  }
+
   console.log(
     `Typed ${packages.length} packages. (${packages.map((p) => p[0]).join(', ')})`
   );
