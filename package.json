@@ -1,6 +1,6 @@
 {
   "name": "declarator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Declaration generator for javascript dependencies",
   "main": "dist/index.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "lint": "tsc --noEmit && eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "version": "auto-changelog -p && git add CHANGELOG.md",
-    "postinstall": "node lib/postinstall.js" 
+    "postinstall": "node lib/postinstall.js"
   },
   "repository": {
     "type": "git",
