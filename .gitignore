@@ -1,0 +1,7 @@
+/node_modules
+/dist
+/ignore
+/.vscode/settings.json
+/package-lock.json
+/coverage
+*.log

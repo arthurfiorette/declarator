@@ -1,0 +1,38 @@
+{
+  "name": "declarator",
+  "version": "1.0.0",
+  "description": "Declaration generator for javascript dependencies",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prettify": "prettier --write .",
+    "lint": "tsc --noEmit && eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "version": "auto-changelog -p && git add CHANGELOG.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArthurFiorette/declarator.git"
+  },
+  "keywords": [],
+  "author": "Hazork",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArthurFiorette/declarator/issues"
+  },
+  "homepage": "https://github.com/ArthurFiorette/declarator#readme",
+  "devDependencies": {
+    "@arthurfiorette/prettier-config": "^1.0.6",
+    "@types/node": "^16.10.2",
+    "@typescript-eslint/eslint-plugin": "^4.31.2",
+    "@typescript-eslint/parser": "^4.31.2",
+    "auto-changelog": "^2.3.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.1",
+    "prettier-plugin-jsdoc": "^0.3.24",
+    "prettier-plugin-organize-imports": "^2.3.4",
+    "typescript": "^4.4.3"
+  }
+}
