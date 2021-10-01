@@ -104,6 +104,12 @@ You can configure this package by creating a subsection in your package.json fil
 }
 ```
 
+Then just run it!
+
+```sh
+$ npx declarator
+```
+
 ## Inspiration
 
 This project is was created to simplify use of javascript native projects with a
