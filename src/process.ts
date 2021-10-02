@@ -4,6 +4,7 @@ import path from 'path';
 import resolvePackagePath from 'resolve-package-path';
 import { PackageOptions } from './config';
 import { executeCommand, generateCommand } from './executor';
+import { log } from './log';
 import { editPackageJson } from './package-editor';
 import {
   defaultCompilerOptions,
@@ -12,7 +13,7 @@ import {
 } from './typescript-config';
 
 const findPackagePath = (name: string) => {
-  return path.dirname(resolvePackagePath(name, __dirname) || require.resolve(name));
+  return path.dirname(resolvePackagePath(name, process.cwd()) || require.resolve(name));
 };
 
 export const processPackage = async (
@@ -35,7 +36,7 @@ export const processPackage = async (
   const [, error] = await executeCommand(command, { cwd: location });
 
   if (error) {
-    console.error(error.err);
+    log('error', JSON.stringify(error, null, 2));
     return;
   }
 

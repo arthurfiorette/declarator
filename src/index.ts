@@ -1,4 +1,5 @@
 import { readConfig } from './config';
+import { log } from './log';
 import { processPackage } from './process';
 
 export const run = async (exitCode: number) => {
@@ -7,16 +8,17 @@ export const run = async (exitCode: number) => {
   const packages = Object.entries(config);
 
   if (packages.length === 0) {
-    console.error('No packages were modified');
+    log('error', 'No packages were modified');
     process.exitCode = exitCode;
     process.exit();
   }
 
   await Promise.all(packages.map(([pkg, options]) => processPackage(pkg, options))).catch(
-    console.error
+    (err) => log('error', JSON.stringify(err, null, 2))
   );
 
-  console.log(
+  log(
+    'info',
     `Typed ${packages.length} packages. (${packages.map((p) => p[0]).join(', ')})`
   );
 };
