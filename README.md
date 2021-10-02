@@ -73,6 +73,9 @@ Declarator</h1>
 ## Installing
 
 ```sh
+# Npx
+npx declarator
+
 # Npm
 npm install --save-dev declarator
 
