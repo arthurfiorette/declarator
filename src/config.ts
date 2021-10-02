@@ -15,7 +15,8 @@ export const readConfig = async (): Promise<Config> => {
   const config = packageJson['declarator'];
 
   if (!config) {
-    log('error',
+    log(
+      'error',
       "'declarator' section at package.json could not be found. Are you still using this package?"
     );
 
