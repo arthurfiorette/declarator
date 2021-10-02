@@ -1,6 +1,6 @@
 {
   "name": "declarator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Declaration generator for javascript dependencies",
   "main": "dist/index.js",
   "bin": "./lib/cli.js",
