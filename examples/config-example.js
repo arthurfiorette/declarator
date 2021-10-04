@@ -23,7 +23,7 @@ const config = () => {
       // Default config for all packages.
       compilerOptions: {
         // Use LF for compilation
-        newLine: 2
+        newLine: 1
       }
     }
   };
