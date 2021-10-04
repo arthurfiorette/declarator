@@ -1,6 +1,6 @@
 import path from 'path';
-import type { PackageConfig } from 'src';
 import { defaultOptions } from '../config/defaults';
+import type { PackageConfig } from '../config/types';
 import { hasNpmPackage } from '../npm/api';
 import { log } from '../util/log';
 import { editPackageJson } from '../util/package-json';
