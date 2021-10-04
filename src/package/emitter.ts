@@ -29,7 +29,7 @@ export async function emitTypes(
 
     info.declarator.typed = false;
   } else {
-    log.info`Generated types for ${name}`;
+    log.debug`${name} was typed`;
     log.debug`${stdout}`;
 
     info.declarator.typed = true;

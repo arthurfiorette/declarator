@@ -60,7 +60,7 @@ export async function getPackageInfo(
     // Handles any case of error by overriding the package with a newly one.
     info = { declarator: { typed: false, version: infoVersion, name }, ...config };
     await fs.writeFile(infoPath, JSON.stringify(info));
-    log.info`Generated ${infoPath} was generated with version ${info.declarator.version}.`;
+    log.debug`Wrote a default config for ${name}.`;
   }
 
   return info;
