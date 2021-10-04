@@ -50,7 +50,7 @@ Declarator</h1>
 <br />
 <br />
 
-### `declarator` simplify the use of _JavaScript_ native projects with in an _TypeScript_ codebase.
+### `declarator` simplify the use of native _javascript_ projects with a _typescript_ codebase.
 
 <br />
 
@@ -88,9 +88,12 @@ $ declarator
 // code.ts
 import dependency from 'untyped-dependency'; // { sum: (a: number, b: number) => number }
 
-dependency.methodThatDoesNotExists(); // Error!
-// Method detected and typed!
-dependency.sum(1, '2'); // Argument of type 'string' is not assignable to parameter of type 'number'.
+// Error: Property 'methodThatDoesNotExists' does not exist on
+// type '{ sum: (a: number, b: number) => number }'.
+dependency.methodThatDoesNotExists();
+
+// Error: Expected 2 arguments, but got 1.
+dependency.sum(1);
 ```
 
 <br />
@@ -100,9 +103,9 @@ dependency.sum(1, '2'); // Argument of type 'string' is not assignable to parame
 Declarator, make your development process faster and more reliable while working with
 unknown, undocumented and/or untyped javascript code. This automatically generate
 declaration files, basically using `tsc --emitDeclarationOnly` for all dependencies that
-you specify in the config file. Say never again to write a bunch of
+you specify in the config file. Say _never again_ to write a bunch of
 `export declare module 'name';` in a types.d.ts. But keep in mind that you'll find some
-any types in the progress.
+`any` types in the progress.
 
 <br />
 
