@@ -1,8 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
-import type { PackageConfig } from 'src';
+import type { PackageConfig } from '../config/types';
 import { log } from '../util/log';
-import type { TsconfigJson } from '../util/types';
 import type { PackageInfo } from './types';
 
 /**
@@ -50,7 +49,7 @@ export async function getPackageInfo(
         JSON.stringify(content, null, 2)
       );
 
-      log.info`A ${infoPath}.old will be generated.`;
+      log.info`A ${infoPath}.old was generated.`;
 
       // Skips to catch block
       throw null;
@@ -59,23 +58,10 @@ export async function getPackageInfo(
     info = content;
   } catch {
     // Handles any case of error by overriding the package with a newly one.
-    info = emptyPackageInfo(name, config);
+    info = { declarator: { typed: false, version: infoVersion, name }, ...config };
     await fs.writeFile(infoPath, JSON.stringify(info));
-    log.info`Generated ${infoPath} was generated with ${info.declarator.version} version.`;
+    log.info`Generated ${infoPath} was generated with version ${info.declarator.version}.`;
   }
 
   return info;
-}
-
-function emptyPackageInfo(
-  name: string,
-  { include, exclude, files, compilerOptions }: TsconfigJson
-): PackageInfo {
-  return {
-    compilerOptions,
-    declarator: { typed: false, version: infoVersion, name },
-    exclude,
-    include,
-    files
-  };
 }

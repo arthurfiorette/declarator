@@ -1,8 +1,12 @@
+import merge from 'lodash.merge';
 import path from 'path';
 import { log } from '../util/log';
 import { defaultOptions } from './defaults';
 import type { Configuration, FileConfig } from './types';
 
+/**
+ * The list of possible filenames for the configuration file. Package.json is checked separately.
+ */
 export const possibleFilenames = [
   'declarator.js',
   'declarator.json',
@@ -13,9 +17,18 @@ export const possibleFilenames = [
   '.declaratorrc.json'
 ];
 
-export async function readConfig(root = process.cwd()): Promise<FileConfig> {
+/**
+ *
+ * Attempts to read or create a configuration file for the specified directory.
+ *
+ * @param directory the directory to find the file
+ * @returns the read config or a newly created one
+ */
+export async function readConfig(
+  directory = process.cwd()
+): Promise<Partial<FileConfig>> {
   for (const possibleFile of possibleFilenames) {
-    const name = path.join(root, possibleFile);
+    const name = path.join(directory, possibleFile);
     try {
       return require(name);
     } catch {
@@ -26,7 +39,7 @@ export async function readConfig(root = process.cwd()): Promise<FileConfig> {
   }
 
   // Try finding it at package.json
-  const packagePath = path.join(root, 'package.json');
+  const packagePath = path.join(directory, 'package.json');
   try {
     const packageJson = await require(packagePath);
     const declarator = packageJson['declarator'];
@@ -46,6 +59,13 @@ export async function readConfig(root = process.cwd()): Promise<FileConfig> {
   }
 }
 
-export function parseConfig(config: FileConfig): Configuration {
-  return typeof config === 'function' ? config() : config;
+/**
+ * Parses the read config and merge any empty property with the defaults
+ *
+ * @param config the partial config that was read
+ * @returns the complete config merged with defaults
+ */
+export function parseConfig(config: Partial<FileConfig>): Configuration {
+  const read = typeof config === 'function' ? config() : config;
+  return merge(defaultOptions, read);
 }
