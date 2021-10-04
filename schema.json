@@ -8909,30 +8909,49 @@
     },
     "properties": {
         "defaults": {
-            "properties": {
-                "compilerOptions": {
-                    "$ref": "#/definitions/CompilerOptions"
-                },
-                "exclude": {
-                    "items": {
-                        "type": "string"
+            "allOf": [
+                {
+                    "properties": {
+                        "compilerOptions": {
+                            "$ref": "#/definitions/CompilerOptions"
+                        },
+                        "exclude": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "files": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "include": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
                     },
-                    "type": "array"
+                    "type": "object"
                 },
-                "files": {
-                    "items": {
-                        "type": "string"
+                {
+                    "properties": {
+                        "ignoreDtCheck": {
+                            "default": false,
+                            "description": "If we shouldn't make a request and verify if the package has and @types/package npm module available.",
+                            "type": "boolean"
+                        },
+                        "merge": {
+                            "default": false,
+                            "description": "If this specific configuration should be merged with the defaults. Obviously, prevails over defaults.",
+                            "type": "boolean"
+                        }
                     },
-                    "type": "array"
-                },
-                "include": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
+                    "type": "object"
                 }
-            },
-            "type": "object"
+            ]
         },
         "packages": {
             "items": {
@@ -8972,6 +8991,11 @@
                                     },
                                     {
                                         "properties": {
+                                            "ignoreDtCheck": {
+                                                "default": false,
+                                                "description": "If we shouldn't make a request and verify if the package has and @types/package npm module available.",
+                                                "type": "boolean"
+                                            },
                                             "merge": {
                                                 "default": false,
                                                 "description": "If this specific configuration should be merged with the defaults. Obviously, prevails over defaults.",
