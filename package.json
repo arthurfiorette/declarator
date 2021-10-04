@@ -1,6 +1,6 @@
 {
   "name": "declarator",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Declaration generator for javascript dependencies",
   "main": "dist/index.js",
   "bin": "./dist/core/cli.js",
@@ -9,8 +9,8 @@
     "prettify": "prettier --write .",
     "lint": "tsc --noEmit && eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
-    "generate-schema":"typescript-json-schema src/config/types.ts Configuration -o schema.json --ignoreErrors",
-    "version": "auto-changelog -p && git add CHANGELOG.md"
+    "generate-schema": "typescript-json-schema src/config/types.ts Configuration -o schema.json --ignoreErrors",
+    "version": "npm run generate-schema && git add schema.json && auto-changelog -p && git add CHANGELOG.md"
   },
   "repository": {
     "type": "git",
