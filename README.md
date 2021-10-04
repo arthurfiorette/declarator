@@ -50,24 +50,60 @@ Declarator</h1>
 <br />
 <br />
 
-### `declarator` is a development dependency to automatically generate types from a javascript library.
+### `declarator` simplify the use of _JavaScript_ native projects with in an _TypeScript_ codebase.
 
 <br />
 
-```js
-// package.json
+### Before:
 
+```jsonc
+// tsconfig.json
 {
   // ...
-  "declarator": {
-    "an-untyped-and-installed-package": {
-      /* default options */
-    }
-  }
+  "include": ["src", "./types.d.ts"]
 }
 ```
 
+```ts
+// types.d.ts
+export declare module 'untyped-dependency';
+```
+
+```ts
+// code.ts
+import dependency from 'untyped-dependency'; // any
+
+dependency.methodThatDoesNotExists(); // Fine!
+dependency.sum(1, '2'); // Also fine!
+```
+
+### After:
+
+```sh
+$ declarator
+#> Generated types for 1 package(s) out of 1.
+```
+
+```ts
+// code.ts
+import dependency from 'untyped-dependency'; // { sum: (a: number, b: number) => number }
+
+dependency.methodThatDoesNotExists(); // Error!
+// Method detected and typed!
+dependency.sum(1, '2'); // Argument of type 'string' is not assignable to parameter of type 'number'.
+```
+
 <br />
+
+##
+
+Declarator, make your development process faster and more reliable while working with
+unknown, undocumented and/or untyped javascript code. This automatically generate
+declaration files, basically using `tsc --emitDeclarationOnly` for all dependencies that
+you specify in the config file. Say never again to write a bunch of
+`export declare module 'name';` in a types.d.ts. But keep in mind that you'll find some
+any types in the progress.
+
 <br />
 
 ## Installing
@@ -78,6 +114,8 @@ npx declarator
 
 # Npm
 npm install --save-dev declarator
+# (Globally)
+npm install -g declarator
 
 # Yarn
 yarn add -D declarator
@@ -87,37 +125,161 @@ yarn add -D declarator
 
 ## Configuration
 
-You can configure this package by creating a subsection in your package.json file.
+You create customized behaviors by creating a declarator file. It needs to be in your
+project root and follow one of these names:
+
+- `declarator.js`
+- `declarator.json`
+- `.declarator.js`
+- `.declarator.json`
+- `.declaratorrc`
+- `.declaratorrc.js`
+- `.declaratorrc.json`
+- `package.json` _(In a declarator section)_
+
+### Config examples:
+
+> The configuration format is specified by the [Configuration](src/config/types.ts) type.
+
+> Json schema and JSDoc are available!
+
+<details>
+  <summary><code>declarator.js</code>, <code>.declarator.js</code>, or <code>.declaratorrc.js</code></summary>
+
+##### [Example](examples/config-example.js)
 
 ```js
-// package.json
+//@ts-check
 
+/**
+ * You can export default a function or a object
+ *
+ * Replace ../dist to declarator when using it as a npm dependency.
+ * @type {import('../dist').FileConfig}
+ */
+const config = () => {
+  return {
+    packages: [
+      // Package that will receive all the defaults
+      'random-name',
+      [
+        'random2',
+        {
+          // Merge defaults here
+          merge: true,
+          // Specific config for the random2 package.
+          include: ['./custom-path-for-this-library']
+        }
+      ]
+    ],
+    defaults: {
+      // Default config for all packages.
+      compilerOptions: {
+        // Use LF for compilation
+        newLine: 2
+      }
+    }
+  };
+};
+module.exports = config;
+```
+
+</details>
+
+<details>
+  <summary><code>declarator.json</code>, <code>.declarator.json</code>, <code>.declaratorrc</code> or <code>.declaratorrc.json</code></summary>
+
+##### [Example](examples/config-example.jsonc)
+
+```jsonc
 {
-  // ...
-  "declarator": {
-    // Every package named here will be generated it's declarations
-    "an-untyped-and-installed-package": {
-      /* all options are optional */
-      // Override exclude and include to only generate type declarations for a subset of the source files.
-      // By default, all javascript files within the project are considered.
-      "include": ["./**/*.js"], // default
-      "exclude": ["./**/*.d.ts"] // default
+  // WARN: Comments are not allowed in json files!
+
+  // Schema to ide autocompletion
+  "$schema": "https://github.com/ArthurFiorette/declarator/blob/<INSTALLED NPM VERSION>/schema.json",
+  "packages": [
+    // Package that will receive all the defaults
+    "random-name",
+    [
+      "random2",
+      {
+        // Merge defaults here
+        "merge": true,
+        // Specific config for the random2 package.
+        "include": ["./custom-path-for-this-library"]
+      }
+    ]
+  ],
+  "defaults": {
+    // Default config for all packages.
+    "compilerOptions": {
+      // Use LF for compilation
+      "newLine": 2
     }
   }
 }
 ```
 
-Then just run it!
+</details>
 
-```sh
-$ npx declarator
+<details>
+  <summary><code>package.json</code></summary>
+
+##### [Example](examples/config-config-example-package.jsonc)
+
+```jsonc
+{
+  // WARN: Comments are not allowed in json files!
+
+  //...
+  "declarator": {
+    // Schema to ide autocompletion
+    "$schema": "https://github.com/ArthurFiorette/declarator/blob/<INSTALLED NPM VERSION>/schema.json",
+    "packages": [
+      // Package that will receive all the defaults
+      "random-name",
+      [
+        "random2",
+        {
+          // Merge defaults here
+          "merge": true,
+          // Specific config for the random2 package.
+          "include": ["./custom-path-for-this-library"]
+        }
+      ]
+    ],
+    "defaults": {
+      // Default config for all packages.
+      "compilerOptions": {
+        // Use LF for compilation
+        "newLine": 2
+      }
+    }
+  }
+}
 ```
 
-## Inspiration
+</details>
 
-This project is was created to simplify use of javascript native projects with a
-typescript codebase. In a way that you don't have to manually write some useful types or a
-bunch of `export declare module 'name';` in a global.d.ts.
+<br />
+
+## Running
+
+This project has a very simple **CLI**:
+
+> Run `declarator --help` for an up-to-date version.
+
+```
+Usage: declarator [flags]
+
+Options:
+  -V, --version   output the version number
+  --debug         output extra debugging (default: false)
+  -h, --help      display help for command
+
+Commands:
+  help [command]  display help for command
+```
 
 <br />
 

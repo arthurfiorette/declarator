@@ -1,0 +1,26 @@
+{
+  // WARN: Comments are not allowed in json files!
+
+  // Schema to ide autocompletion
+  "$schema": "https://github.com/ArthurFiorette/declarator/blob/<INSTALLED NPM VERSION>/schema.json",
+  "packages": [
+    // Package that will receive all the defaults
+    "random-name",
+    [
+      "random2",
+      {
+        // Merge defaults here
+        "merge": true,
+        // Specific config for the random2 package.
+        "include": ["./custom-path-for-this-library"]
+      }
+    ]
+  ],
+  "defaults": {
+    // Default config for all packages.
+    "compilerOptions": {
+      // Use LF for compilation
+      "newLine": 2
+    }
+  }
+}
