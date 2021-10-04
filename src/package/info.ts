@@ -1,5 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
+import type { PackageConfig } from 'src';
 import { log } from '../util/log';
 import type { TsconfigJson } from '../util/types';
 import type { PackageInfo } from './types';
@@ -18,13 +19,13 @@ export const infoVersion = 1;
  *
  * @param name the package name
  * @param packagePath the path where the package is located
- * @param options the package tsconfig that should be used in case the package is not found or outdated
+ * @param config the package tsconfig that should be used in case the package is not found or outdated
  * @returns a promise with the package info
  */
 export async function getPackageInfo(
   name: string,
   packagePath: string,
-  options: TsconfigJson
+  config: PackageConfig
 ): Promise<PackageInfo> {
   const infoPath = path.join(packagePath, filename);
 
@@ -58,7 +59,7 @@ export async function getPackageInfo(
     info = content;
   } catch {
     // Handles any case of error by overriding the package with a newly one.
-    info = emptyPackageInfo(name, options);
+    info = emptyPackageInfo(name, config);
     await fs.writeFile(infoPath, JSON.stringify(info));
     log.info`Generated ${infoPath} was generated with ${info.declarator.version} version.`;
   }

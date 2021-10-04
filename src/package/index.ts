@@ -1,9 +1,10 @@
 import path from 'path';
+import type { PackageConfig } from 'src';
 import { defaultOptions } from '../config/defaults';
+import { hasNpmPackage } from '../npm/api';
 import { log } from '../util/log';
 import { editPackageJson } from '../util/package-json';
 import { findPackage } from '../util/path';
-import type { TsconfigJson } from '../util/types';
 import { emitTypes } from './emitter';
 import { getPackageInfo } from './info';
 
@@ -11,20 +12,28 @@ import { getPackageInfo } from './info';
  * Starts the processing of a package
  *
  * @param {string} name their name
- * @param {TsconfigJson} options the tsconfig.json options record that should be used
+ * @param {PackageConfig} config the tsconfig.json options record that should be used
  * @return {Promise<boolean>} a promise that resolves true if the d.ts files were created successfully.
  */
 export async function processPackage(
   name: string,
-  options: TsconfigJson
+  config: PackageConfig
 ): Promise<boolean> {
   const pkgDir = findPackage(name);
 
-  const packageInfo = await getPackageInfo(name, pkgDir, options);
+  const packageInfo = await getPackageInfo(name, pkgDir, config);
 
   if (packageInfo.declarator.typed) {
     log.info`Package ${name} is typed`;
     return false;
+  }
+
+  if (!config.ignoreDtCheck) {
+    const existsTypes = await hasNpmPackage(`@types/${name}`);
+    if (existsTypes) {
+      log.warn`An @types/${name} package is available!\n Install it at https://npmjs.com/package/@types/${name}. Use ignoreDtCheck to hide this warning.`;
+      return false;
+    }
   }
 
   const emitted = await emitTypes(name, pkgDir, packageInfo);
