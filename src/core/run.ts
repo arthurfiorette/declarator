@@ -22,7 +22,7 @@ export async function run(): Promise<void> {
 
   const results = await Promise.all(promises);
 
-  log.info`Generated types for ${results.filter((r) => !!r).length} package(s) out of ${
-    packages.length
-  }.`;
+  log.info`Generated types for ${
+    results.filter((r) => !!r).length + ''
+  } package(s) out of ${packages.length}.`;
 }

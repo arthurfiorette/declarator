@@ -29,7 +29,9 @@ const templateLog = (level: keyof typeof Levels) => {
   ) => {
     const msg = raw.reduce((acc, str, i) => {
       const value = values[i];
-      return acc + str + (value ? describeValue(value) : '');
+      return (
+        acc + str + (value !== null && value !== undefined ? describeValue(value) : '')
+      );
     }, '');
 
     console.log(`${Levels[level]}[declarator]${ResetColor}: ${msg}`);
