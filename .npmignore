@@ -19,3 +19,5 @@
 !/src/**
 !/dist/**
 !/lib/**
+
+!schema.json
