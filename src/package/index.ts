@@ -24,7 +24,7 @@ export async function processPackage(
   const packageInfo = await getPackageInfo(name, pkgDir, config);
 
   if (packageInfo.declarator.typed) {
-    log.info`Package ${name} is typed`;
+    log.debug`Package ${name} is already typed`;
     return false;
   }
 

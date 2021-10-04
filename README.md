@@ -284,6 +284,16 @@ Commands:
   help [command]  display help for command
 ```
 
+You can use it in a `postinstall` npm script to automatically type installed and updated dependencies:
+
+```json
+{
+  "scripts": {
+    "postinstall": "declarator"
+  }
+}
+```
+
 <br />
 
 ## License
