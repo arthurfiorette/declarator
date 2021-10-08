@@ -77,6 +77,8 @@ dependency.methodThatDoesNotExists(); // Fine!
 dependency.sum(1, '2'); // Also fine!
 ```
 
+<br />
+
 ### After:
 
 ```sh
@@ -142,9 +144,9 @@ project root and follow one of these names:
 
 ### Config examples:
 
-> The configuration format is specified by the [Configuration](src/config/types.ts) type.
+The configuration format is specified by the [Configuration](src/config/types.ts) type.
 
-> Json schema and JSDoc are available!
+> JsonSchema and JSDoc for auto completion are available too!
 
 <details>
   <summary><code>declarator.js</code>, <code>.declarator.js</code>, or <code>.declaratorrc.js</code></summary>
@@ -268,6 +270,10 @@ module.exports = config;
 
 ## Running
 
+For the types to be generated, you need to run `declarator` command on your machine,
+**with node_modules already present and installed**. After running, the types will already
+be available to be used.
+
 This project has a very simple **CLI**:
 
 > Run `declarator --help` for an up-to-date version.
@@ -284,15 +290,18 @@ Commands:
   help [command]  display help for command
 ```
 
-You can use it in a `postinstall` npm script to automatically type installed and updated dependencies:
-
-```json
+<details>
+  <summary><b>TIP</b>: You can use it in a npm <code>postinstall</code> script to, after every package install, run <code>declarator</code> and the types will be updated</summary>
+  
+```jsonc
+ // package.json
 {
   "scripts": {
     "postinstall": "declarator"
   }
 }
 ```
+</details>
 
 <br />
 
