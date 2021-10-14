@@ -111,6 +111,19 @@ you specify in the config file. Say _never again_ to write a bunch of
 
 <br />
 
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [Installing](#installing)
+- [Running](#running)
+- [Configuration](#configuration)
+  - [Config examples:](#config-examples)
+    - [Example Javascript](#example-javascript)
+    - [Example Json](#example-json)
+    - [Example Package.json](#example-packagejson)
+- [License](#license)
+- [Contact](#contact)
+
 ## Installing
 
 ```sh
@@ -125,146 +138,6 @@ npm install -g declarator
 # Yarn
 yarn add -D declarator
 ```
-
-<br />
-
-## Configuration
-
-You create customized behaviors by creating a declarator file. It needs to be in your
-project root and follow one of these names:
-
-- `declarator.js`
-- `declarator.json`
-- `.declarator.js`
-- `.declarator.json`
-- `.declaratorrc`
-- `.declaratorrc.js`
-- `.declaratorrc.json`
-- `package.json` _(In a declarator section)_
-
-### Config examples:
-
-The configuration format is specified by the [Configuration](src/config/types.ts) type.
-
-> JsonSchema and JSDoc for auto completion are available too!
-
-<details>
-  <summary><code>declarator.js</code>, <code>.declarator.js</code>, or <code>.declaratorrc.js</code></summary>
-
-##### [Example](examples/config-example.js)
-
-```js
-//@ts-check
-
-/**
- * You can export default a function or a object
- *
- * Replace ../dist to declarator when using it as a npm dependency.
- * @type {import('../dist').FileConfig}
- */
-const config = () => {
-  return {
-    packages: [
-      // Package that will receive all the defaults
-      'random-name',
-      [
-        'random2',
-        {
-          // Merge defaults here
-          merge: true,
-          // Specific config for the random2 package.
-          include: ['./custom-path-for-this-library']
-        }
-      ]
-    ],
-    defaults: {
-      // Default config for all packages.
-      compilerOptions: {
-        // Use LF for compilation
-        newLine: 1
-      }
-    }
-  };
-};
-module.exports = config;
-```
-
-</details>
-
-<details>
-  <summary><code>declarator.json</code>, <code>.declarator.json</code>, <code>.declaratorrc</code> or <code>.declaratorrc.json</code></summary>
-
-##### [Example](examples/config-example.jsonc)
-
-```jsonc
-{
-  // WARN: Comments are not allowed in json files!
-
-  // Schema to ide autocompletion
-  "$schema": "https://github.com/ArthurFiorette/declarator/blob/<INSTALLED NPM VERSION>/schema.json",
-  "packages": [
-    // Package that will receive all the defaults
-    "random-name",
-    [
-      "random2",
-      {
-        // Merge defaults here
-        "merge": true,
-        // Specific config for the random2 package.
-        "include": ["./custom-path-for-this-library"]
-      }
-    ]
-  ],
-  "defaults": {
-    // Default config for all packages.
-    "compilerOptions": {
-      // Use LF for compilation
-      "newLine": 1
-    }
-  }
-}
-```
-
-</details>
-
-<details>
-  <summary><code>package.json</code></summary>
-
-##### [Example](examples/config-config-example-package.jsonc)
-
-```jsonc
-{
-  // WARN: Comments are not allowed in json files!
-
-  //...
-  "declarator": {
-    // Schema to ide autocompletion
-    "$schema": "https://github.com/ArthurFiorette/declarator/blob/<INSTALLED NPM VERSION>/schema.json",
-    "packages": [
-      // Package that will receive all the defaults
-      "random-name",
-      [
-        "random2",
-        {
-          // Merge defaults here
-          "merge": true,
-          // Specific config for the random2 package.
-          "include": ["./custom-path-for-this-library"]
-        }
-      ]
-    ],
-    "defaults": {
-      // Default config for all packages.
-      "compilerOptions": {
-        // Use LF for compilation
-        "newLine": 1
-      }
-    }
-  }
-}
-```
-
-</details>
 
 <br />
 
@@ -302,6 +175,147 @@ Commands:
   }
 }
 ```
+</details>
+
+<br />
+
+## Configuration
+
+You create customized behaviors by creating a declarator file. It needs to be in your
+project root and follow one of these names:
+
+- `declarator.js`
+- `declarator.json`
+- `.declarator.js`
+- `.declarator.json`
+- `.declaratorrc`
+- `.declaratorrc.js`
+- `.declaratorrc.json`
+- `package.json` _(In a declarator section)_
+
+### Config examples:
+
+The configuration format is specified by the [Configuration](src/config/types.ts) type.
+
+> JsonSchema and JSDoc for auto completion are available too!
+
+<details>
+  <summary><code>declarator.js</code>, <code>.declarator.js</code>, or <code>.declaratorrc.js</code></summary>
+
+##### [Example Javascript](examples/config-example.js)
+
+```js
+//@ts-check
+
+/**
+ * You can export default a function or a object
+ *
+ * Replace ../dist to declarator when using it as a npm dependency.
+ *
+ * @type {import('../dist').FileConfig}
+ */
+const config = () => {
+  return {
+    packages: [
+      // Package that will receive all the defaults
+      'random-name',
+      [
+        'random2',
+        {
+          // Merge defaults here
+          merge: true,
+          // Specific config for the random2 package.
+          include: ['./custom-path-for-this-library']
+        }
+      ]
+    ],
+    defaults: {
+      // Default config for all packages.
+      compilerOptions: {
+        // Use LF for compilation
+        newLine: 1
+      }
+    }
+  };
+};
+module.exports = config;
+```
+
+</details>
+
+<details>
+  <summary><code>declarator.json</code>, <code>.declarator.json</code>, <code>.declaratorrc</code> or <code>.declaratorrc.json</code></summary>
+
+##### [Example Json](examples/config-example.jsonc)
+
+```jsonc
+{
+  // WARN: Comments are not allowed in json files!
+
+  // Schema to ide autocompletion
+  "$schema": "https://github.com/ArthurFiorette/declarator/blob/<INSTALLED NPM VERSION>/schema.json",
+  "packages": [
+    // Package that will receive all the defaults
+    "random-name",
+    [
+      "random2",
+      {
+        // Merge defaults here
+        "merge": true,
+        // Specific config for the random2 package.
+        "include": ["./custom-path-for-this-library"]
+      }
+    ]
+  ],
+  "defaults": {
+    // Default config for all packages.
+    "compilerOptions": {
+      // Use LF for compilation
+      "newLine": 1
+    }
+  }
+}
+```
+
+</details>
+
+<details>
+  <summary><code>package.json</code></summary>
+
+##### [Example Package.json](examples/config-config-example-package.jsonc)
+
+```jsonc
+{
+  // WARN: Comments are not allowed in json files!
+
+  //...
+  "declarator": {
+    // Schema to ide autocompletion
+    "$schema": "https://github.com/ArthurFiorette/declarator/blob/<INSTALLED NPM VERSION>/schema.json",
+    "packages": [
+      // Package that will receive all the defaults
+      "random-name",
+      [
+        "random2",
+        {
+          // Merge defaults here
+          "merge": true,
+          // Specific config for the random2 package.
+          "include": ["./custom-path-for-this-library"]
+        }
+      ]
+    ],
+    "defaults": {
+      // Default config for all packages.
+      "compilerOptions": {
+        // Use LF for compilation
+        "newLine": 1
+      }
+    }
+  }
+}
+```
+
 </details>
 
 <br />
