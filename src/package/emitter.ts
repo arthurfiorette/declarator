@@ -8,10 +8,10 @@ import type { PackageInfo } from './types';
 /**
  * Emit the declaration types for a package
  *
- * @param name the package name
- * @param cwd the package directory
- * @param info the package info
- * @returns true if the declaration types were emitted
+ * @param name The package name
+ * @param cwd The package directory
+ * @param info The package info
+ * @returns True if the declaration types were emitted
  */
 export async function emitTypes(
   name: string,

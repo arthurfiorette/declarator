@@ -16,10 +16,11 @@ export const infoVersion = 1;
 /**
  * Attempts to read or create the package info located at root.
  *
- * @param name the package name
- * @param packagePath the path where the package is located
- * @param config the package tsconfig that should be used in case the package is not found or outdated
- * @returns a promise with the package info
+ * @param name The package name
+ * @param packagePath The path where the package is located
+ * @param config The package tsconfig that should be used in case the
+ *   package is not found or outdated
+ * @returns A promise with the package info
  */
 export async function getPackageInfo(
   name: string,

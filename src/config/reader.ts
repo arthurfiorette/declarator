@@ -5,7 +5,8 @@ import { defaultOptions } from './defaults';
 import type { Configuration, FileConfig } from './types';
 
 /**
- * The list of possible filenames for the configuration file. Package.json is checked separately.
+ * The list of possible filenames for the configuration file.
+ * Package.json is checked separately.
  */
 export const possibleFilenames = [
   'declarator.js',
@@ -18,11 +19,10 @@ export const possibleFilenames = [
 ];
 
 /**
- *
  * Attempts to read or create a configuration file for the specified directory.
  *
- * @param directory the directory to find the file
- * @returns the read config or a newly created one
+ * @param directory The directory to find the file
+ * @returns The read config or a newly created one
  */
 export async function readConfig(
   directory = process.cwd()
@@ -62,8 +62,8 @@ export async function readConfig(
 /**
  * Parses the read config and merge any empty property with the defaults
  *
- * @param config the partial config that was read
- * @returns the complete config merged with defaults
+ * @param config The partial config that was read
+ * @returns The complete config merged with defaults
  */
 export function parseConfig(config: Partial<FileConfig>): Configuration {
   const read = typeof config === 'function' ? config() : config;

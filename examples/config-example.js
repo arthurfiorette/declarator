@@ -2,6 +2,7 @@
 
 /**
  * Replace ../dist to declarator when using it as a npm dependency.
+ *
  * @type {import('../dist').FileConfig}
  */
 const config = () => {

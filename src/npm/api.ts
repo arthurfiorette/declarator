@@ -3,8 +3,8 @@ import https from 'https';
 /**
  * A simple api method to check if a npm package exists
  *
- * @param name the package name
- * @returns true if the package exists
+ * @param name The package name
+ * @returns True if the package exists
  */
 export async function hasNpmPackage(name: string): Promise<boolean> {
   return new Promise((resolve, reject) => {

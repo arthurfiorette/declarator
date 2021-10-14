@@ -11,9 +11,11 @@ import { getPackageInfo } from './info';
 /**
  * Starts the processing of a package
  *
- * @param {string} name their name
- * @param {PackageConfig} config the tsconfig.json options record that should be used
- * @return {Promise<boolean>} a promise that resolves true if the d.ts files were created successfully.
+ * @param {string} name Their name
+ * @param {PackageConfig} config The tsconfig.json options record that
+ *   should be used
+ * @returns {Promise<boolean>} A promise that resolves true if the
+ *   d.ts files were created successfully.
  */
 export async function processPackage(
   name: string,
