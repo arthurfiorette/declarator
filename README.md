@@ -283,7 +283,7 @@ Usage: declarator [flags]
 
 Options:
   -V, --version   output the version number
-  --debug         output extra debugging (default: false)
+  -d, --debug     output extra debugging (default: false)
   --init          create a blank config file (default: false)
   -h, --help      display help for command
 
