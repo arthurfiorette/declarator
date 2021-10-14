@@ -29,13 +29,13 @@
     "resolve-package-path": "^4.0.3"
   },
   "devDependencies": {
-    "@arthurfiorette/prettier-config": "^1.0.6",
+    "@arthurfiorette/prettier-config": "*",
     "@types/lodash.merge": "^4.6.6",
     "@types/node": "^16.10.2",
-    "@typescript-eslint/eslint-plugin": "^4.31.2",
-    "@typescript-eslint/parser": "^4.31.2",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
     "auto-changelog": "^2.3.0",
-    "eslint": "^7.32.0",
+    "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "package-json-type": "^1.0.3",
