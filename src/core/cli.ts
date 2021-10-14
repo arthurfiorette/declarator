@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import { createBlackConfig } from '../config/create-blank';
 import { log } from '../util/log';
 import { createProgram } from './program';
 import { run } from './run';
@@ -9,11 +10,16 @@ import { run } from './run';
 
   program.parse(process.argv);
 
-  const { debug } = program.opts();
+  const { debug, init } = program.opts();
 
   if (!debug) {
     log.debug = () => undefined;
   }
 
-  run();
+  if (init) {
+    await createBlackConfig();
+    return;
+  }
+
+  await run();
 })().catch(log.error);

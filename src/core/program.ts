@@ -18,6 +18,7 @@ export async function createProgram(): Promise<Command> {
     .addHelpCommand(true);
 
   program.option('--debug', 'output extra debugging', false);
+  program.option('--init', 'create a blank config file', false);
 
   return program;
 }
