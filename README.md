@@ -2,7 +2,7 @@
 <div align="center">
   <pre>
   <br />
-  <h1>⚙️
+  <h1>⚙️⚡
 Declarator</h1>
   <br />
   </pre>
