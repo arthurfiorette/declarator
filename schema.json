@@ -95,18 +95,12 @@
         },
         "ArrayLiteralExpression": {
             "properties": {
-                "_expressionBrand": {
-                },
-                "_leftHandSideExpressionBrand": {
-                },
-                "_memberExpressionBrand": {
-                },
-                "_primaryExpressionBrand": {
-                },
-                "_unaryExpressionBrand": {
-                },
-                "_updateExpressionBrand": {
-                },
+                "_expressionBrand": {},
+                "_leftHandSideExpressionBrand": {},
+                "_memberExpressionBrand": {},
+                "_primaryExpressionBrand": {},
+                "_unaryExpressionBrand": {},
+                "_updateExpressionBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -142,12 +136,9 @@
         },
         "ArrowFunction": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_expressionBrand": {
-                },
-                "_functionLikeDeclarationBrand": {
-                },
+                "_declarationBrand": {},
+                "_expressionBrand": {},
+                "_functionLikeDeclarationBrand": {},
                 "asteriskToken": {
                     "$ref": "#/definitions/AsteriskToken"
                 },
@@ -208,6 +199,93 @@
                         "$ref": "#/definitions/TypeParameterDeclaration"
                     },
                     "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "AssertClause": {
+            "properties": {
+                "decorators": {
+                    "items": {
+                        "$ref": "#/definitions/Decorator"
+                    },
+                    "type": "array"
+                },
+                "elements": {
+                    "items": {
+                        "$ref": "#/definitions/AssertEntry"
+                    },
+                    "type": "array"
+                },
+                "end": {
+                    "type": "number"
+                },
+                "flags": {
+                    "$ref": "#/definitions/NodeFlags"
+                },
+                "kind": {
+                    "$ref": "#/definitions/SyntaxKind.AssertClause"
+                },
+                "modifiers": {
+                    "$ref": "#/definitions/ModifiersArray"
+                },
+                "multiLine": {
+                    "type": "boolean"
+                },
+                "parent": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/ImportDeclaration"
+                        },
+                        {
+                            "$ref": "#/definitions/ExportDeclaration"
+                        }
+                    ]
+                },
+                "pos": {
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "AssertEntry": {
+            "properties": {
+                "decorators": {
+                    "items": {
+                        "$ref": "#/definitions/Decorator"
+                    },
+                    "type": "array"
+                },
+                "end": {
+                    "type": "number"
+                },
+                "flags": {
+                    "$ref": "#/definitions/NodeFlags"
+                },
+                "kind": {
+                    "$ref": "#/definitions/SyntaxKind.AssertEntry"
+                },
+                "modifiers": {
+                    "$ref": "#/definitions/ModifiersArray"
+                },
+                "name": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/Identifier"
+                        },
+                        {
+                            "$ref": "#/definitions/StringLiteral"
+                        }
+                    ]
+                },
+                "parent": {
+                    "$ref": "#/definitions/AssertClause"
+                },
+                "pos": {
+                    "type": "number"
+                },
+                "value": {
+                    "$ref": "#/definitions/StringLiteral"
                 }
             },
             "type": "object"
@@ -301,8 +379,7 @@
         },
         "BindingElement": {
             "properties": {
-                "_declarationBrand": {
-                },
+                "_declarationBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -380,8 +457,7 @@
         },
         "Block": {
             "properties": {
-                "_statementBrand": {
-                },
+                "_statementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -417,8 +493,7 @@
         },
         "BreakStatement": {
             "properties": {
-                "_statementBrand": {
-                },
+                "_statementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -451,10 +526,8 @@
         },
         "CallSignatureDeclaration": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_typeElementBrand": {
-                },
+                "_declarationBrand": {},
+                "_typeElementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -636,10 +709,8 @@
         },
         "ClassDeclaration": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_statementBrand": {
-                },
+                "_declarationBrand": {},
+                "_statementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -691,10 +762,8 @@
         },
         "ClassElement": {
             "properties": {
-                "_classElementBrand": {
-                },
-                "_declarationBrand": {
-                },
+                "_classElementBrand": {},
+                "_declarationBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -743,20 +812,13 @@
         },
         "ClassExpression": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_expressionBrand": {
-                },
-                "_leftHandSideExpressionBrand": {
-                },
-                "_memberExpressionBrand": {
-                },
-                "_primaryExpressionBrand": {
-                },
-                "_unaryExpressionBrand": {
-                },
-                "_updateExpressionBrand": {
-                },
+                "_declarationBrand": {},
+                "_expressionBrand": {},
+                "_leftHandSideExpressionBrand": {},
+                "_memberExpressionBrand": {},
+                "_primaryExpressionBrand": {},
+                "_unaryExpressionBrand": {},
+                "_updateExpressionBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -807,10 +869,8 @@
         },
         "ClassStaticBlockDeclaration": {
             "properties": {
-                "_classElementBrand": {
-                },
-                "_declarationBrand": {
-                },
+                "_classElementBrand": {},
+                "_declarationBrand": {},
                 "body": {
                     "$ref": "#/definitions/Block"
                 },
@@ -1117,6 +1177,9 @@
                 "preserveSymlinks": {
                     "type": "boolean"
                 },
+                "preserveValueImports": {
+                    "type": "boolean"
+                },
                 "project": {
                     "type": "string"
                 },
@@ -1268,10 +1331,8 @@
         },
         "ConstructSignatureDeclaration": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_typeElementBrand": {
-                },
+                "_declarationBrand": {},
+                "_typeElementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -1338,12 +1399,9 @@
         },
         "ConstructorDeclaration": {
             "properties": {
-                "_classElementBrand": {
-                },
-                "_declarationBrand": {
-                },
-                "_functionLikeDeclarationBrand": {
-                },
+                "_classElementBrand": {},
+                "_declarationBrand": {},
+                "_functionLikeDeclarationBrand": {},
                 "asteriskToken": {
                     "$ref": "#/definitions/AsteriskToken"
                 },
@@ -1426,10 +1484,8 @@
         },
         "ConstructorTypeNode": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_typeNodeBrand": {
-                },
+                "_declarationBrand": {},
+                "_typeNodeBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -1493,8 +1549,7 @@
         },
         "ContinueStatement": {
             "properties": {
-                "_statementBrand": {
-                },
+                "_statementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -1527,8 +1582,7 @@
         },
         "DebuggerStatement": {
             "properties": {
-                "_statementBrand": {
-                },
+                "_statementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -1558,8 +1612,7 @@
         },
         "Declaration": {
             "properties": {
-                "_declarationBrand": {
-                },
+                "_declarationBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -1714,8 +1767,7 @@
         },
         "DoStatement": {
             "properties": {
-                "_statementBrand": {
-                },
+                "_statementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -1780,16 +1832,11 @@
         },
         "ElementAccessExpression": {
             "properties": {
-                "_expressionBrand": {
-                },
-                "_leftHandSideExpressionBrand": {
-                },
-                "_memberExpressionBrand": {
-                },
-                "_unaryExpressionBrand": {
-                },
-                "_updateExpressionBrand": {
-                },
+                "_expressionBrand": {},
+                "_leftHandSideExpressionBrand": {},
+                "_memberExpressionBrand": {},
+                "_unaryExpressionBrand": {},
+                "_updateExpressionBrand": {},
                 "argumentExpression": {
                     "$ref": "#/definitions/Expression"
                 },
@@ -1828,8 +1875,7 @@
         },
         "EmptyStatement": {
             "properties": {
-                "_statementBrand": {
-                },
+                "_statementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -1859,10 +1905,8 @@
         },
         "EnumDeclaration": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_statementBrand": {
-                },
+                "_declarationBrand": {},
+                "_statementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -1901,8 +1945,7 @@
         },
         "EnumMember": {
             "properties": {
-                "_declarationBrand": {
-                },
+                "_declarationBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -2042,10 +2085,8 @@
         "ExportAssignment": {
             "description": "This is either an `export =` or an `export default` declaration.\nUnless `isExportEquals` is set, this node was parsed as an `export default`.",
             "properties": {
-                "_declarationBrand": {
-                },
-                "_statementBrand": {
-                },
+                "_declarationBrand": {},
+                "_statementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -2094,9 +2135,10 @@
         },
         "ExportDeclaration": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_statementBrand": {
+                "_declarationBrand": {},
+                "_statementBrand": {},
+                "assertClause": {
+                    "$ref": "#/definitions/AssertClause"
                 },
                 "decorators": {
                     "items": {
@@ -2194,8 +2236,7 @@
         },
         "ExportSpecifier": {
             "properties": {
-                "_declarationBrand": {
-                },
+                "_declarationBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -2207,6 +2248,9 @@
                 },
                 "flags": {
                     "$ref": "#/definitions/NodeFlags"
+                },
+                "isTypeOnly": {
+                    "type": "boolean"
                 },
                 "kind": {
                     "$ref": "#/definitions/SyntaxKind.ExportSpecifier"
@@ -2231,8 +2275,7 @@
         },
         "Expression": {
             "properties": {
-                "_expressionBrand": {
-                },
+                "_expressionBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -2262,8 +2305,7 @@
         },
         "ExpressionStatement": {
             "properties": {
-                "_statementBrand": {
-                },
+                "_statementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -2296,8 +2338,7 @@
         },
         "ExpressionWithTypeArguments": {
             "properties": {
-                "_typeNodeBrand": {
-                },
+                "_typeNodeBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -2378,18 +2419,12 @@
         },
         "FalseLiteral": {
             "properties": {
-                "_expressionBrand": {
-                },
-                "_leftHandSideExpressionBrand": {
-                },
-                "_memberExpressionBrand": {
-                },
-                "_primaryExpressionBrand": {
-                },
-                "_unaryExpressionBrand": {
-                },
-                "_updateExpressionBrand": {
-                },
+                "_expressionBrand": {},
+                "_leftHandSideExpressionBrand": {},
+                "_memberExpressionBrand": {},
+                "_primaryExpressionBrand": {},
+                "_unaryExpressionBrand": {},
+                "_updateExpressionBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -2433,8 +2468,7 @@
         },
         "ForInStatement": {
             "properties": {
-                "_statementBrand": {
-                },
+                "_statementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -2480,8 +2514,7 @@
         },
         "ForOfStatement": {
             "properties": {
-                "_statementBrand": {
-                },
+                "_statementBrand": {},
                 "awaitModifier": {
                     "$ref": "#/definitions/AwaitKeyword"
                 },
@@ -2530,8 +2563,7 @@
         },
         "ForStatement": {
             "properties": {
-                "_statementBrand": {
-                },
+                "_statementBrand": {},
                 "condition": {
                     "$ref": "#/definitions/Expression"
                 },
@@ -2580,12 +2612,9 @@
         },
         "FunctionDeclaration": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_functionLikeDeclarationBrand": {
-                },
-                "_statementBrand": {
-                },
+                "_declarationBrand": {},
+                "_functionLikeDeclarationBrand": {},
+                "_statementBrand": {},
                 "asteriskToken": {
                     "$ref": "#/definitions/AsteriskToken"
                 },
@@ -2645,22 +2674,14 @@
         },
         "FunctionExpression": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_expressionBrand": {
-                },
-                "_functionLikeDeclarationBrand": {
-                },
-                "_leftHandSideExpressionBrand": {
-                },
-                "_memberExpressionBrand": {
-                },
-                "_primaryExpressionBrand": {
-                },
-                "_unaryExpressionBrand": {
-                },
-                "_updateExpressionBrand": {
-                },
+                "_declarationBrand": {},
+                "_expressionBrand": {},
+                "_functionLikeDeclarationBrand": {},
+                "_leftHandSideExpressionBrand": {},
+                "_memberExpressionBrand": {},
+                "_primaryExpressionBrand": {},
+                "_unaryExpressionBrand": {},
+                "_updateExpressionBrand": {},
                 "asteriskToken": {
                     "$ref": "#/definitions/AsteriskToken"
                 },
@@ -2720,10 +2741,8 @@
         },
         "FunctionTypeNode": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_typeNodeBrand": {
-                },
+                "_declarationBrand": {},
+                "_typeNodeBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -2787,16 +2806,11 @@
         },
         "GetAccessorDeclaration": {
             "properties": {
-                "_classElementBrand": {
-                },
-                "_declarationBrand": {
-                },
-                "_functionLikeDeclarationBrand": {
-                },
-                "_objectLiteralBrand": {
-                },
-                "_typeElementBrand": {
-                },
+                "_classElementBrand": {},
+                "_declarationBrand": {},
+                "_functionLikeDeclarationBrand": {},
+                "_objectLiteralBrand": {},
+                "_typeElementBrand": {},
                 "asteriskToken": {
                     "$ref": "#/definitions/AsteriskToken"
                 },
@@ -2940,20 +2954,13 @@
         },
         "Identifier": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_expressionBrand": {
-                },
-                "_leftHandSideExpressionBrand": {
-                },
-                "_memberExpressionBrand": {
-                },
-                "_primaryExpressionBrand": {
-                },
-                "_unaryExpressionBrand": {
-                },
-                "_updateExpressionBrand": {
-                },
+                "_declarationBrand": {},
+                "_expressionBrand": {},
+                "_leftHandSideExpressionBrand": {},
+                "_memberExpressionBrand": {},
+                "_primaryExpressionBrand": {},
+                "_unaryExpressionBrand": {},
+                "_updateExpressionBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -2969,8 +2976,7 @@
                             "allOf": [
                                 {
                                     "properties": {
-                                        "__escapedIdentifier": {
-                                        }
+                                        "__escapedIdentifier": {}
                                     },
                                     "type": "object"
                                 },
@@ -2981,12 +2987,10 @@
                         },
                         {
                             "allOf": [
-                                {
-                                },
+                                {},
                                 {
                                     "properties": {
-                                        "__escapedIdentifier": {
-                                        }
+                                        "__escapedIdentifier": {}
                                     },
                                     "type": "object"
                                 }
@@ -3046,8 +3050,7 @@
         },
         "IfStatement": {
             "properties": {
-                "_statementBrand": {
-                },
+                "_statementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -3086,8 +3089,7 @@
         },
         "ImportClause": {
             "properties": {
-                "_declarationBrand": {
-                },
+                "_declarationBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -3133,7 +3135,9 @@
         },
         "ImportDeclaration": {
             "properties": {
-                "_statementBrand": {
+                "_statementBrand": {},
+                "assertClause": {
+                    "$ref": "#/definitions/AssertClause"
                 },
                 "decorators": {
                     "items": {
@@ -3179,10 +3183,8 @@
         "ImportEqualsDeclaration": {
             "description": "One of:\n- import x = require(\"mod\");\n- import x = M.x;",
             "properties": {
-                "_declarationBrand": {
-                },
-                "_statementBrand": {
-                },
+                "_declarationBrand": {},
+                "_statementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -3238,8 +3240,7 @@
         },
         "ImportSpecifier": {
             "properties": {
-                "_declarationBrand": {
-                },
+                "_declarationBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -3251,6 +3252,9 @@
                 },
                 "flags": {
                     "$ref": "#/definitions/NodeFlags"
+                },
+                "isTypeOnly": {
+                    "type": "boolean"
                 },
                 "kind": {
                     "$ref": "#/definitions/SyntaxKind.ImportSpecifier"
@@ -3283,12 +3287,9 @@
         },
         "IndexSignatureDeclaration": {
             "properties": {
-                "_classElementBrand": {
-                },
-                "_declarationBrand": {
-                },
-                "_typeElementBrand": {
-                },
+                "_classElementBrand": {},
+                "_declarationBrand": {},
+                "_typeElementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -3355,8 +3356,7 @@
         },
         "InferTypeNode": {
             "properties": {
-                "_typeNodeBrand": {
-                },
+                "_typeNodeBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -3389,10 +3389,8 @@
         },
         "InterfaceDeclaration": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_statementBrand": {
-                },
+                "_declarationBrand": {},
+                "_statementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -3771,12 +3769,9 @@
         },
         "JSDocFunctionType": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_jsDocTypeBrand": {
-                },
-                "_typeNodeBrand": {
-                },
+                "_declarationBrand": {},
+                "_jsDocTypeBrand": {},
+                "_typeNodeBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -4108,10 +4103,8 @@
         },
         "JSDocNamespaceDeclaration": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_statementBrand": {
-                },
+                "_declarationBrand": {},
+                "_statementBrand": {},
                 "body": {
                     "anyOf": [
                         {
@@ -4170,8 +4163,7 @@
         },
         "JSDocPropertyLikeTag": {
             "properties": {
-                "_declarationBrand": {
-                },
+                "_declarationBrand": {},
                 "comment": {
                     "anyOf": [
                         {
@@ -4421,8 +4413,7 @@
         },
         "JSDocTypeExpression": {
             "properties": {
-                "_typeNodeBrand": {
-                },
+                "_typeNodeBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -4455,10 +4446,8 @@
         },
         "JSDocTypeLiteral": {
             "properties": {
-                "_jsDocTypeBrand": {
-                },
-                "_typeNodeBrand": {
-                },
+                "_jsDocTypeBrand": {},
+                "_typeNodeBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -4498,12 +4487,9 @@
         },
         "JsonMinusNumericLiteral": {
             "properties": {
-                "_expressionBrand": {
-                },
-                "_unaryExpressionBrand": {
-                },
-                "_updateExpressionBrand": {
-                },
+                "_expressionBrand": {},
+                "_unaryExpressionBrand": {},
+                "_updateExpressionBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -4539,8 +4525,7 @@
         },
         "JsonObjectExpressionStatement": {
             "properties": {
-                "_statementBrand": {
-                },
+                "_statementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -4609,8 +4594,7 @@
         },
         "LabeledStatement": {
             "properties": {
-                "_statementBrand": {
-                },
+                "_statementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -4653,14 +4637,10 @@
         },
         "LeftHandSideExpression": {
             "properties": {
-                "_expressionBrand": {
-                },
-                "_leftHandSideExpressionBrand": {
-                },
-                "_unaryExpressionBrand": {
-                },
-                "_updateExpressionBrand": {
-                },
+                "_expressionBrand": {},
+                "_leftHandSideExpressionBrand": {},
+                "_unaryExpressionBrand": {},
+                "_updateExpressionBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -4697,14 +4677,10 @@
         },
         "MethodDeclaration": {
             "properties": {
-                "_classElementBrand": {
-                },
-                "_declarationBrand": {
-                },
-                "_functionLikeDeclarationBrand": {
-                },
-                "_objectLiteralBrand": {
-                },
+                "_classElementBrand": {},
+                "_declarationBrand": {},
+                "_functionLikeDeclarationBrand": {},
+                "_objectLiteralBrand": {},
                 "asteriskToken": {
                     "$ref": "#/definitions/AsteriskToken"
                 },
@@ -4790,10 +4766,8 @@
         },
         "MethodSignature": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_typeElementBrand": {
-                },
+                "_declarationBrand": {},
+                "_typeElementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -4906,8 +4880,7 @@
         },
         "ModuleBlock": {
             "properties": {
-                "_statementBrand": {
-                },
+                "_statementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -4943,10 +4916,8 @@
         },
         "ModuleDeclaration": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_statementBrand": {
-                },
+                "_declarationBrand": {},
+                "_statementBrand": {},
                 "body": {
                     "anyOf": [
                         {
@@ -5020,11 +4991,14 @@
             "enum": [
                 0,
                 1,
+                100,
+                199,
                 2,
                 3,
                 4,
                 5,
                 6,
+                7,
                 99
             ],
             "type": "number"
@@ -5032,14 +5006,15 @@
         "ModuleResolutionKind": {
             "enum": [
                 1,
-                2
+                2,
+                3,
+                99
             ],
             "type": "number"
         },
         "NamedDeclaration": {
             "properties": {
-                "_declarationBrand": {
-                },
+                "_declarationBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -5173,10 +5148,8 @@
         },
         "NamedTupleMember": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_typeNodeBrand": {
-                },
+                "_declarationBrand": {},
+                "_typeNodeBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -5218,10 +5191,8 @@
         },
         "NamespaceDeclaration": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_statementBrand": {
-                },
+                "_declarationBrand": {},
+                "_statementBrand": {},
                 "body": {
                     "anyOf": [
                         {
@@ -5280,8 +5251,7 @@
         },
         "NamespaceExport": {
             "properties": {
-                "_declarationBrand": {
-                },
+                "_declarationBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -5314,10 +5284,8 @@
         },
         "NamespaceExportDeclaration": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_statementBrand": {
-                },
+                "_declarationBrand": {},
+                "_statementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -5350,8 +5318,7 @@
         },
         "NamespaceImport": {
             "properties": {
-                "_declarationBrand": {
-                },
+                "_declarationBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -5391,22 +5358,14 @@
         },
         "NoSubstitutionTemplateLiteral": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_expressionBrand": {
-                },
-                "_leftHandSideExpressionBrand": {
-                },
-                "_literalExpressionBrand": {
-                },
-                "_memberExpressionBrand": {
-                },
-                "_primaryExpressionBrand": {
-                },
-                "_unaryExpressionBrand": {
-                },
-                "_updateExpressionBrand": {
-                },
+                "_declarationBrand": {},
+                "_expressionBrand": {},
+                "_leftHandSideExpressionBrand": {},
+                "_literalExpressionBrand": {},
+                "_memberExpressionBrand": {},
+                "_primaryExpressionBrand": {},
+                "_unaryExpressionBrand": {},
+                "_updateExpressionBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -5510,18 +5469,12 @@
         },
         "NullLiteral": {
             "properties": {
-                "_expressionBrand": {
-                },
-                "_leftHandSideExpressionBrand": {
-                },
-                "_memberExpressionBrand": {
-                },
-                "_primaryExpressionBrand": {
-                },
-                "_unaryExpressionBrand": {
-                },
-                "_updateExpressionBrand": {
-                },
+                "_expressionBrand": {},
+                "_leftHandSideExpressionBrand": {},
+                "_memberExpressionBrand": {},
+                "_primaryExpressionBrand": {},
+                "_unaryExpressionBrand": {},
+                "_updateExpressionBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -5551,22 +5504,14 @@
         },
         "NumericLiteral": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_expressionBrand": {
-                },
-                "_leftHandSideExpressionBrand": {
-                },
-                "_literalExpressionBrand": {
-                },
-                "_memberExpressionBrand": {
-                },
-                "_primaryExpressionBrand": {
-                },
-                "_unaryExpressionBrand": {
-                },
-                "_updateExpressionBrand": {
-                },
+                "_declarationBrand": {},
+                "_expressionBrand": {},
+                "_leftHandSideExpressionBrand": {},
+                "_literalExpressionBrand": {},
+                "_memberExpressionBrand": {},
+                "_primaryExpressionBrand": {},
+                "_unaryExpressionBrand": {},
+                "_updateExpressionBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -5650,20 +5595,13 @@
         },
         "ObjectLiteralExpression": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_expressionBrand": {
-                },
-                "_leftHandSideExpressionBrand": {
-                },
-                "_memberExpressionBrand": {
-                },
-                "_primaryExpressionBrand": {
-                },
-                "_unaryExpressionBrand": {
-                },
-                "_updateExpressionBrand": {
-                },
+                "_declarationBrand": {},
+                "_expressionBrand": {},
+                "_leftHandSideExpressionBrand": {},
+                "_memberExpressionBrand": {},
+                "_primaryExpressionBrand": {},
+                "_unaryExpressionBrand": {},
+                "_updateExpressionBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -5735,8 +5673,7 @@
         },
         "OmittedExpression": {
             "properties": {
-                "_expressionBrand": {
-                },
+                "_expressionBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -5795,8 +5732,7 @@
         },
         "ParameterDeclaration": {
             "properties": {
-                "_declarationBrand": {
-                },
+                "_declarationBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -5884,18 +5820,12 @@
         },
         "ParenthesizedExpression": {
             "properties": {
-                "_expressionBrand": {
-                },
-                "_leftHandSideExpressionBrand": {
-                },
-                "_memberExpressionBrand": {
-                },
-                "_primaryExpressionBrand": {
-                },
-                "_unaryExpressionBrand": {
-                },
-                "_updateExpressionBrand": {
-                },
+                "_expressionBrand": {},
+                "_leftHandSideExpressionBrand": {},
+                "_memberExpressionBrand": {},
+                "_primaryExpressionBrand": {},
+                "_unaryExpressionBrand": {},
+                "_updateExpressionBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -5936,6 +5866,12 @@
         },
         "PrivateIdentifier": {
             "properties": {
+                "_expressionBrand": {},
+                "_leftHandSideExpressionBrand": {},
+                "_memberExpressionBrand": {},
+                "_primaryExpressionBrand": {},
+                "_unaryExpressionBrand": {},
+                "_updateExpressionBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -5951,8 +5887,7 @@
                             "allOf": [
                                 {
                                     "properties": {
-                                        "__escapedIdentifier": {
-                                        }
+                                        "__escapedIdentifier": {}
                                     },
                                     "type": "object"
                                 },
@@ -5963,12 +5898,10 @@
                         },
                         {
                             "allOf": [
-                                {
-                                },
+                                {},
                                 {
                                     "properties": {
-                                        "__escapedIdentifier": {
-                                        }
+                                        "__escapedIdentifier": {}
                                     },
                                     "type": "object"
                                 }
@@ -6073,20 +6006,13 @@
         "PropertyAccessEntityNameExpression": {
             "description": "Brand for a PropertyAccessExpression which, like a QualifiedName, consists of a sequence of identifiers separated by dots.",
             "properties": {
-                "_declarationBrand": {
-                },
-                "_expressionBrand": {
-                },
-                "_leftHandSideExpressionBrand": {
-                },
-                "_memberExpressionBrand": {
-                },
-                "_propertyAccessExpressionLikeQualifiedNameBrand": {
-                },
-                "_unaryExpressionBrand": {
-                },
-                "_updateExpressionBrand": {
-                },
+                "_declarationBrand": {},
+                "_expressionBrand": {},
+                "_leftHandSideExpressionBrand": {},
+                "_memberExpressionBrand": {},
+                "_propertyAccessExpressionLikeQualifiedNameBrand": {},
+                "_unaryExpressionBrand": {},
+                "_updateExpressionBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -6132,10 +6058,8 @@
         },
         "PropertyAssignment": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_objectLiteralBrand": {
-                },
+                "_declarationBrand": {},
+                "_objectLiteralBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -6193,10 +6117,8 @@
         },
         "PropertyDeclaration": {
             "properties": {
-                "_classElementBrand": {
-                },
-                "_declarationBrand": {
-                },
+                "_classElementBrand": {},
+                "_declarationBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -6264,10 +6186,8 @@
         },
         "PropertySignature": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_typeElementBrand": {
-                },
+                "_declarationBrand": {},
+                "_typeElementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -6512,8 +6432,7 @@
         },
         "ReturnStatement": {
             "properties": {
-                "_statementBrand": {
-                },
+                "_statementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -6562,16 +6481,11 @@
         },
         "SetAccessorDeclaration": {
             "properties": {
-                "_classElementBrand": {
-                },
-                "_declarationBrand": {
-                },
-                "_functionLikeDeclarationBrand": {
-                },
-                "_objectLiteralBrand": {
-                },
-                "_typeElementBrand": {
-                },
+                "_classElementBrand": {},
+                "_declarationBrand": {},
+                "_functionLikeDeclarationBrand": {},
+                "_objectLiteralBrand": {},
+                "_typeElementBrand": {},
                 "asteriskToken": {
                     "$ref": "#/definitions/AsteriskToken"
                 },
@@ -6663,10 +6577,8 @@
         },
         "ShorthandPropertyAssignment": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_objectLiteralBrand": {
-                },
+                "_declarationBrand": {},
+                "_objectLiteralBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -6711,8 +6623,7 @@
         },
         "SourceFile": {
             "properties": {
-                "_declarationBrand": {
-                },
+                "_declarationBrand": {},
                 "amdDependencies": {
                     "items": {
                         "$ref": "#/definitions/AmdDependency"
@@ -6740,6 +6651,14 @@
                 "hasNoDefaultLib": {
                     "description": "lib.d.ts should have a reference comment like\n\n /// <reference no-default-lib=\"true\"/>\n\nIf any other file has this comment, it signals not to include lib.d.ts\nbecause this containing file is intended to act as a default library.",
                     "type": "boolean"
+                },
+                "impliedNodeFormat": {
+                    "description": "When `module` is `Node12` or `NodeNext`, this field controls whether the\nsource file in question is an ESNext-output-format file, or a CommonJS-output-format\nmodule. This is derived by the module resolver as it looks up the file, since\nit is derived from either the file extension of the module, or the containing\n`package.json` context, and affects both checking and emit.\n\nIt is _public_ so that (pre)transformers can set this field,\nsince it switches the builtin `node` module transform. Generally speaking, if unset,\nthe field is treated as though it is `ModuleKind.CommonJS`.",
+                    "enum": [
+                        1,
+                        99
+                    ],
+                    "type": "number"
                 },
                 "isDeclarationFile": {
                     "type": "boolean"
@@ -6797,10 +6716,8 @@
         },
         "SpreadAssignment": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_objectLiteralBrand": {
-                },
+                "_declarationBrand": {},
+                "_objectLiteralBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -6852,8 +6769,7 @@
         },
         "Statement": {
             "properties": {
-                "_statementBrand": {
-                },
+                "_statementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -6912,22 +6828,14 @@
         },
         "StringLiteral": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_expressionBrand": {
-                },
-                "_leftHandSideExpressionBrand": {
-                },
-                "_literalExpressionBrand": {
-                },
-                "_memberExpressionBrand": {
-                },
-                "_primaryExpressionBrand": {
-                },
-                "_unaryExpressionBrand": {
-                },
-                "_updateExpressionBrand": {
-                },
+                "_declarationBrand": {},
+                "_expressionBrand": {},
+                "_leftHandSideExpressionBrand": {},
+                "_literalExpressionBrand": {},
+                "_memberExpressionBrand": {},
+                "_primaryExpressionBrand": {},
+                "_unaryExpressionBrand": {},
+                "_updateExpressionBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -6966,8 +6874,7 @@
         },
         "SwitchStatement": {
             "properties": {
-                "_statementBrand": {
-                },
+                "_statementBrand": {},
                 "caseBlock": {
                     "$ref": "#/definitions/CaseBlock"
                 },
@@ -7287,6 +7194,9 @@
                 349,
                 35,
                 350,
+                351,
+                352,
+                353,
                 36,
                 37,
                 38,
@@ -7368,19 +7278,31 @@
         },
         "SyntaxKind.ArrayBindingPattern": {
             "enum": [
-                200
+                201
             ],
             "type": "number"
         },
         "SyntaxKind.ArrayLiteralExpression": {
             "enum": [
-                202
+                203
             ],
             "type": "number"
         },
         "SyntaxKind.ArrowFunction": {
             "enum": [
-                212
+                213
+            ],
+            "type": "number"
+        },
+        "SyntaxKind.AssertClause": {
+            "enum": [
+                292
+            ],
+            "type": "number"
+        },
+        "SyntaxKind.AssertEntry": {
+            "enum": [
+                293
             ],
             "type": "number"
         },
@@ -7392,79 +7314,79 @@
         },
         "SyntaxKind.AsyncKeyword": {
             "enum": [
-                130
+                131
             ],
             "type": "number"
         },
         "SyntaxKind.AwaitKeyword": {
             "enum": [
-                131
+                132
             ],
             "type": "number"
         },
         "SyntaxKind.BindingElement": {
             "enum": [
-                201
+                202
             ],
             "type": "number"
         },
         "SyntaxKind.Block": {
             "enum": [
-                233
+                234
             ],
             "type": "number"
         },
         "SyntaxKind.BreakStatement": {
             "enum": [
-                244
+                245
             ],
             "type": "number"
         },
         "SyntaxKind.CallSignature": {
             "enum": [
-                172
+                173
             ],
             "type": "number"
         },
         "SyntaxKind.CaseBlock": {
             "enum": [
-                261
+                262
             ],
             "type": "number"
         },
         "SyntaxKind.CaseClause": {
             "enum": [
-                287
+                288
             ],
             "type": "number"
         },
         "SyntaxKind.CatchClause": {
             "enum": [
-                290
+                291
             ],
             "type": "number"
         },
         "SyntaxKind.ClassDeclaration": {
             "enum": [
-                255
+                256
             ],
             "type": "number"
         },
         "SyntaxKind.ClassExpression": {
             "enum": [
-                224
+                225
             ],
             "type": "number"
         },
         "SyntaxKind.ClassStaticBlockDeclaration": {
             "enum": [
-                168
+                169
             ],
             "type": "number"
         },
         "SyntaxKind.ComputedPropertyName": {
             "enum": [
-                160
+                161
             ],
             "type": "number"
         },
@@ -7476,49 +7398,49 @@
         },
         "SyntaxKind.ConstructSignature": {
             "enum": [
-                173
+                174
             ],
             "type": "number"
         },
         "SyntaxKind.Constructor": {
             "enum": [
-                169
+                170
             ],
             "type": "number"
         },
         "SyntaxKind.ConstructorType": {
             "enum": [
-                178
+                179
             ],
             "type": "number"
         },
         "SyntaxKind.ContinueStatement": {
             "enum": [
-                243
+                244
             ],
             "type": "number"
         },
         "SyntaxKind.DebuggerStatement": {
             "enum": [
-                251
+                252
             ],
             "type": "number"
         },
         "SyntaxKind.DeclareKeyword": {
             "enum": [
-                134
+                135
             ],
             "type": "number"
         },
         "SyntaxKind.Decorator": {
             "enum": [
-                163
+                164
             ],
             "type": "number"
         },
         "SyntaxKind.DefaultClause": {
             "enum": [
-                288
+                289
             ],
             "type": "number"
         },
@@ -7530,7 +7452,7 @@
         },
         "SyntaxKind.DoStatement": {
             "enum": [
-                238
+                239
             ],
             "type": "number"
         },
@@ -7542,13 +7464,13 @@
         },
         "SyntaxKind.ElementAccessExpression": {
             "enum": [
-                205
+                206
             ],
             "type": "number"
         },
         "SyntaxKind.EmptyStatement": {
             "enum": [
-                234
+                235
             ],
             "type": "number"
         },
@@ -7560,13 +7482,13 @@
         },
         "SyntaxKind.EnumDeclaration": {
             "enum": [
-                258
+                259
             ],
             "type": "number"
         },
         "SyntaxKind.EnumMember": {
             "enum": [
-                294
+                297
             ],
             "type": "number"
         },
@@ -7590,13 +7512,13 @@
         },
         "SyntaxKind.ExportAssignment": {
             "enum": [
-                269
+                270
             ],
             "type": "number"
         },
         "SyntaxKind.ExportDeclaration": {
             "enum": [
-                270
+                271
             ],
             "type": "number"
         },
@@ -7608,25 +7530,25 @@
         },
         "SyntaxKind.ExportSpecifier": {
             "enum": [
-                273
+                274
             ],
             "type": "number"
         },
         "SyntaxKind.ExpressionStatement": {
             "enum": [
-                236
+                237
             ],
             "type": "number"
         },
         "SyntaxKind.ExpressionWithTypeArguments": {
             "enum": [
-                226
+                227
             ],
             "type": "number"
         },
         "SyntaxKind.ExternalModuleReference": {
             "enum": [
-                275
+                276
             ],
             "type": "number"
         },
@@ -7638,49 +7560,49 @@
         },
         "SyntaxKind.ForInStatement": {
             "enum": [
-                241
+                242
             ],
             "type": "number"
         },
         "SyntaxKind.ForOfStatement": {
             "enum": [
-                242
+                243
             ],
             "type": "number"
         },
         "SyntaxKind.ForStatement": {
             "enum": [
-                240
+                241
             ],
             "type": "number"
         },
         "SyntaxKind.FunctionDeclaration": {
             "enum": [
-                254
+                255
             ],
             "type": "number"
         },
         "SyntaxKind.FunctionExpression": {
             "enum": [
-                211
+                212
             ],
             "type": "number"
         },
         "SyntaxKind.FunctionType": {
             "enum": [
-                177
+                178
             ],
             "type": "number"
         },
         "SyntaxKind.GetAccessor": {
             "enum": [
-                170
+                171
             ],
             "type": "number"
         },
         "SyntaxKind.HeritageClause": {
             "enum": [
-                289
+                290
             ],
             "type": "number"
         },
@@ -7692,139 +7614,139 @@
         },
         "SyntaxKind.IfStatement": {
             "enum": [
-                237
+                238
             ],
             "type": "number"
         },
         "SyntaxKind.ImportClause": {
             "enum": [
-                265
+                266
             ],
             "type": "number"
         },
         "SyntaxKind.ImportDeclaration": {
             "enum": [
-                264
+                265
             ],
             "type": "number"
         },
         "SyntaxKind.ImportEqualsDeclaration": {
             "enum": [
-                263
+                264
             ],
             "type": "number"
         },
         "SyntaxKind.ImportSpecifier": {
             "enum": [
-                268
+                269
             ],
             "type": "number"
         },
         "SyntaxKind.IndexSignature": {
             "enum": [
-                174
+                175
             ],
             "type": "number"
         },
         "SyntaxKind.InferType": {
             "enum": [
-                188
+                189
             ],
             "type": "number"
         },
         "SyntaxKind.InterfaceDeclaration": {
             "enum": [
-                256
+                257
             ],
             "type": "number"
         },
         "SyntaxKind.JSDocAugmentsTag": {
             "enum": [
-                323
+                326
             ],
             "type": "number"
         },
         "SyntaxKind.JSDocComment": {
             "enum": [
-                315
+                318
             ],
             "type": "number"
         },
         "SyntaxKind.JSDocFunctionType": {
             "enum": [
-                312
+                315
             ],
             "type": "number"
         },
         "SyntaxKind.JSDocImplementsTag": {
             "enum": [
-                324
+                327
             ],
             "type": "number"
         },
         "SyntaxKind.JSDocLink": {
             "enum": [
-                319
+                322
             ],
             "type": "number"
         },
         "SyntaxKind.JSDocLinkCode": {
             "enum": [
-                320
+                323
             ],
             "type": "number"
         },
         "SyntaxKind.JSDocLinkPlain": {
             "enum": [
-                321
+                324
             ],
             "type": "number"
         },
         "SyntaxKind.JSDocMemberName": {
             "enum": [
-                306
+                309
             ],
             "type": "number"
         },
         "SyntaxKind.JSDocTemplateTag": {
             "enum": [
-                339
+                342
             ],
             "type": "number"
         },
         "SyntaxKind.JSDocText": {
             "enum": [
-                316
+                319
             ],
             "type": "number"
         },
         "SyntaxKind.JSDocTypeExpression": {
             "enum": [
-                304
+                307
             ],
             "type": "number"
         },
         "SyntaxKind.JSDocTypeLiteral": {
             "enum": [
-                317
+                320
             ],
             "type": "number"
         },
         "SyntaxKind.LabeledStatement": {
             "enum": [
-                248
+                249
             ],
             "type": "number"
         },
         "SyntaxKind.MethodDeclaration": {
             "enum": [
-                167
+                168
             ],
             "type": "number"
         },
         "SyntaxKind.MethodSignature": {
             "enum": [
-                166
+                167
             ],
             "type": "number"
         },
@@ -7836,49 +7758,49 @@
         },
         "SyntaxKind.ModuleBlock": {
             "enum": [
-                260
+                261
             ],
             "type": "number"
         },
         "SyntaxKind.ModuleDeclaration": {
             "enum": [
-                259
+                260
             ],
             "type": "number"
         },
         "SyntaxKind.NamedExports": {
             "enum": [
-                271
+                272
             ],
             "type": "number"
         },
         "SyntaxKind.NamedImports": {
             "enum": [
-                267
+                268
             ],
             "type": "number"
         },
         "SyntaxKind.NamedTupleMember": {
             "enum": [
-                195
+                196
             ],
             "type": "number"
         },
         "SyntaxKind.NamespaceExport": {
             "enum": [
-                272
+                273
             ],
             "type": "number"
         },
         "SyntaxKind.NamespaceExportDeclaration": {
             "enum": [
-                262
+                263
             ],
             "type": "number"
         },
         "SyntaxKind.NamespaceImport": {
             "enum": [
-                266
+                267
             ],
             "type": "number"
         },
@@ -7902,43 +7824,43 @@
         },
         "SyntaxKind.ObjectBindingPattern": {
             "enum": [
-                199
+                200
             ],
             "type": "number"
         },
         "SyntaxKind.ObjectLiteralExpression": {
             "enum": [
-                203
+                204
             ],
             "type": "number"
         },
         "SyntaxKind.OmittedExpression": {
             "enum": [
-                225
+                226
             ],
             "type": "number"
         },
         "SyntaxKind.OverrideKeyword": {
             "enum": [
-                157
+                158
             ],
             "type": "number"
         },
         "SyntaxKind.Parameter": {
             "enum": [
-                162
+                163
             ],
             "type": "number"
         },
         "SyntaxKind.ParenthesizedExpression": {
             "enum": [
-                210
+                211
             ],
             "type": "number"
         },
         "SyntaxKind.PrefixUnaryExpression": {
             "enum": [
-                217
+                218
             ],
             "type": "number"
         },
@@ -7956,25 +7878,25 @@
         },
         "SyntaxKind.PropertyAccessExpression": {
             "enum": [
-                204
+                205
             ],
             "type": "number"
         },
         "SyntaxKind.PropertyAssignment": {
             "enum": [
-                291
+                294
             ],
             "type": "number"
         },
         "SyntaxKind.PropertyDeclaration": {
             "enum": [
-                165
+                166
             ],
             "type": "number"
         },
         "SyntaxKind.PropertySignature": {
             "enum": [
-                164
+                165
             ],
             "type": "number"
         },
@@ -7992,7 +7914,7 @@
         },
         "SyntaxKind.QualifiedName": {
             "enum": [
-                159
+                160
             ],
             "type": "number"
         },
@@ -8010,37 +7932,37 @@
         },
         "SyntaxKind.ReadonlyKeyword": {
             "enum": [
-                143
+                144
             ],
             "type": "number"
         },
         "SyntaxKind.ReturnStatement": {
             "enum": [
-                245
+                246
             ],
             "type": "number"
         },
         "SyntaxKind.SetAccessor": {
             "enum": [
-                171
+                172
             ],
             "type": "number"
         },
         "SyntaxKind.ShorthandPropertyAssignment": {
             "enum": [
-                292
+                295
             ],
             "type": "number"
         },
         "SyntaxKind.SourceFile": {
             "enum": [
-                300
+                303
             ],
             "type": "number"
         },
         "SyntaxKind.SpreadAssignment": {
             "enum": [
-                293
+                296
             ],
             "type": "number"
         },
@@ -8058,13 +7980,13 @@
         },
         "SyntaxKind.SwitchStatement": {
             "enum": [
-                247
+                248
             ],
             "type": "number"
         },
         "SyntaxKind.ThrowStatement": {
             "enum": [
-                249
+                250
             ],
             "type": "number"
         },
@@ -8076,55 +7998,55 @@
         },
         "SyntaxKind.TryStatement": {
             "enum": [
-                250
+                251
             ],
             "type": "number"
         },
         "SyntaxKind.TypeAliasDeclaration": {
             "enum": [
-                257
+                258
             ],
             "type": "number"
         },
         "SyntaxKind.TypeLiteral": {
             "enum": [
-                180
+                181
             ],
             "type": "number"
         },
         "SyntaxKind.TypeParameter": {
             "enum": [
-                161
+                162
             ],
             "type": "number"
         },
         "SyntaxKind.VariableDeclaration": {
             "enum": [
-                252
+                253
             ],
             "type": "number"
         },
         "SyntaxKind.VariableDeclarationList": {
             "enum": [
-                253
+                254
             ],
             "type": "number"
         },
         "SyntaxKind.VariableStatement": {
             "enum": [
-                235
+                236
             ],
             "type": "number"
         },
         "SyntaxKind.WhileStatement": {
             "enum": [
-                239
+                240
             ],
             "type": "number"
         },
         "SyntaxKind.WithStatement": {
             "enum": [
-                246
+                247
             ],
             "type": "number"
         },
@@ -8133,8 +8055,7 @@
         },
         "ThrowStatement": {
             "properties": {
-                "_statementBrand": {
-                },
+                "_statementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -8254,18 +8175,12 @@
         },
         "TrueLiteral": {
             "properties": {
-                "_expressionBrand": {
-                },
-                "_leftHandSideExpressionBrand": {
-                },
-                "_memberExpressionBrand": {
-                },
-                "_primaryExpressionBrand": {
-                },
-                "_unaryExpressionBrand": {
-                },
-                "_updateExpressionBrand": {
-                },
+                "_expressionBrand": {},
+                "_leftHandSideExpressionBrand": {},
+                "_memberExpressionBrand": {},
+                "_primaryExpressionBrand": {},
+                "_unaryExpressionBrand": {},
+                "_updateExpressionBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -8295,8 +8210,7 @@
         },
         "TryStatement": {
             "properties": {
-                "_statementBrand": {
-                },
+                "_statementBrand": {},
                 "catchClause": {
                     "$ref": "#/definitions/CatchClause"
                 },
@@ -8335,8 +8249,7 @@
         },
         "TsConfigSourceFile": {
             "properties": {
-                "_declarationBrand": {
-                },
+                "_declarationBrand": {},
                 "amdDependencies": {
                     "items": {
                         "$ref": "#/definitions/AmdDependency"
@@ -8370,6 +8283,14 @@
                 "hasNoDefaultLib": {
                     "description": "lib.d.ts should have a reference comment like\n\n /// <reference no-default-lib=\"true\"/>\n\nIf any other file has this comment, it signals not to include lib.d.ts\nbecause this containing file is intended to act as a default library.",
                     "type": "boolean"
+                },
+                "impliedNodeFormat": {
+                    "description": "When `module` is `Node12` or `NodeNext`, this field controls whether the\nsource file in question is an ESNext-output-format file, or a CommonJS-output-format\nmodule. This is derived by the module resolver as it looks up the file, since\nit is derived from either the file extension of the module, or the containing\n`package.json` context, and affects both checking and emit.\n\nIt is _public_ so that (pre)transformers can set this field,\nsince it switches the builtin `node` module transform. Generally speaking, if unset,\nthe field is treated as though it is `ModuleKind.CommonJS`.",
+                    "enum": [
+                        1,
+                        99
+                    ],
+                    "type": "number"
                 },
                 "isDeclarationFile": {
                     "type": "boolean"
@@ -8427,10 +8348,8 @@
         },
         "TypeAliasDeclaration": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_statementBrand": {
-                },
+                "_declarationBrand": {},
+                "_statementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -8472,10 +8391,8 @@
         },
         "TypeElement": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_typeElementBrand": {
-                },
+                "_declarationBrand": {},
+                "_typeElementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -8527,10 +8444,8 @@
         },
         "TypeLiteralNode": {
             "properties": {
-                "_declarationBrand": {
-                },
-                "_typeNodeBrand": {
-                },
+                "_declarationBrand": {},
+                "_typeNodeBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -8566,8 +8481,7 @@
         },
         "TypeNode": {
             "properties": {
-                "_typeNodeBrand": {
-                },
+                "_typeNodeBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -8597,8 +8511,7 @@
         },
         "TypeParameterDeclaration": {
             "properties": {
-                "_declarationBrand": {
-                },
+                "_declarationBrand": {},
                 "constraint": {
                     "$ref": "#/definitions/TypeNode",
                     "description": "Note: Consider calling `getEffectiveConstraintOfTypeParameter`"
@@ -8702,8 +8615,7 @@
         },
         "VariableDeclaration": {
             "properties": {
-                "_declarationBrand": {
-                },
+                "_declarationBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -8800,8 +8712,7 @@
         },
         "VariableStatement": {
             "properties": {
-                "_statementBrand": {
-                },
+                "_statementBrand": {},
                 "declarationList": {
                     "$ref": "#/definitions/VariableDeclarationList"
                 },
@@ -8834,8 +8745,7 @@
         },
         "WhileStatement": {
             "properties": {
-                "_statementBrand": {
-                },
+                "_statementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -8871,8 +8781,7 @@
         },
         "WithStatement": {
             "properties": {
-                "_statementBrand": {
-                },
+                "_statementBrand": {},
                 "decorators": {
                     "items": {
                         "$ref": "#/definitions/Decorator"
@@ -8940,12 +8849,12 @@
                     "properties": {
                         "ignoreDtCheck": {
                             "default": false,
-                            "description": "If we shouldn't make a request and verify if the package has and @types/package npm module available.",
+                            "description": "If we shouldn't make a request and verify if the package has and",
                             "type": "boolean"
                         },
                         "merge": {
                             "default": false,
-                            "description": "If this specific configuration should be merged with the defaults. Obviously, prevails over defaults.",
+                            "description": "If this specific configuration should be merged with the\ndefaults. Obviously, prevails over defaults.",
                             "type": "boolean"
                         }
                     },
@@ -8993,12 +8902,12 @@
                                         "properties": {
                                             "ignoreDtCheck": {
                                                 "default": false,
-                                                "description": "If we shouldn't make a request and verify if the package has and @types/package npm module available.",
+                                                "description": "If we shouldn't make a request and verify if the package has and",
                                                 "type": "boolean"
                                             },
                                             "merge": {
                                                 "default": false,
-                                                "description": "If this specific configuration should be merged with the defaults. Obviously, prevails over defaults.",
+                                                "description": "If this specific configuration should be merged with the\ndefaults. Obviously, prevails over defaults.",
                                                 "type": "boolean"
                                             }
                                         },
