@@ -1,9 +1,9 @@
 //@ts-check
 
 /**
- * Replace ../dist to declarator when using it as a npm dependency.
+ *  You can export default a function or a object
  *
- * @type {import('../dist').FileConfig}
+ * @type {import('declarator').FileConfig}
  */
 const config = () => {
   return {

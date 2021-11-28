@@ -208,11 +208,9 @@ The configuration format is specified by the [Configuration](src/config/types.ts
 //@ts-check
 
 /**
- * You can export default a function or a object
+ *  You can export default a function or a object
  *
- * Replace ../dist to declarator when using it as a npm dependency.
- *
- * @type {import('../dist').FileConfig}
+ * @type {import('declarator').FileConfig}
  */
 const config = () => {
   return {
@@ -252,8 +250,8 @@ module.exports = config;
 {
   // WARN: Comments are not allowed in json files!
 
-  // Schema to ide autocompletion
-  "$schema": "https://github.com/ArthurFiorette/declarator/blob/<INSTALLED NPM VERSION>/schema.json",
+  // Schema to ide autocompletion (Check if this path is correct)
+  "$schema": "./node_modules/declarator/schema.json",
   "packages": [
     // Package that will receive all the defaults
     "random-name",
@@ -288,10 +286,11 @@ module.exports = config;
 {
   // WARN: Comments are not allowed in json files!
 
-  //...
+  // ...
+
   "declarator": {
-    // Schema to ide autocompletion
-    "$schema": "https://github.com/ArthurFiorette/declarator/blob/<INSTALLED NPM VERSION>/schema.json",
+    // Schema to ide autocompletion (Check if this path is correct)
+    "$schema": "./node_modules/declarator/schema.json",
     "packages": [
       // Package that will receive all the defaults
       "random-name",

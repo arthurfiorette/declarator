@@ -1,8 +1,8 @@
 {
   // WARN: Comments are not allowed in json files!
 
-  // Schema to ide autocompletion
-  "$schema": "https://github.com/ArthurFiorette/declarator/blob/<INSTALLED NPM VERSION>/schema.json",
+  // Schema to ide autocompletion (Check if this path is correct)
+  "$schema": "./node_modules/declarator/schema.json",
   "packages": [
     // Package that will receive all the defaults
     "random-name",
