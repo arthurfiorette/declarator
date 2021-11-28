@@ -12,7 +12,7 @@ export const defaultOptions = {
       declaration: true,
       emitDeclarationOnly: true,
       skipLibCheck: true,
-      outDir: './types'
+      outDir: '.'
     } as const
   }
 };
