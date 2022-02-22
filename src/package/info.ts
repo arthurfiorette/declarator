@@ -1,5 +1,5 @@
-import fs from 'fs/promises';
-import path from 'path';
+import fs from 'node:fs/promises';
+import path from 'node:path';
 import type { PackageConfig } from '../config/types';
 import { log } from '../util/log';
 import type { PackageInfo } from './types';
@@ -46,7 +46,7 @@ export async function getPackageInfo(
 
       await fs.writeFile(
         path.join(packagePath, filename + '.old'),
-        // Prettify it to be clear if a human tries to read it
+        // Prettify it to help when a human tries to read it
         JSON.stringify(content, null, 2)
       );
 

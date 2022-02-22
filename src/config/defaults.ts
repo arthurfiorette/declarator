@@ -1,4 +1,6 @@
-export const defaultOptions = {
+import { Configuration } from './types';
+
+export const DEFAULT_OPTIONS: Configuration = {
   packages: [],
   defaults: {
     merge: false,

@@ -2976,7 +2976,9 @@
                             "allOf": [
                                 {
                                     "properties": {
-                                        "__escapedIdentifier": {}
+                                        "__escapedIdentifier": {
+                                            "type": "undefined"
+                                        }
                                     },
                                     "type": "object"
                                 },
@@ -2986,15 +2988,12 @@
                             ]
                         },
                         {
-                            "allOf": [
-                                {},
-                                {
-                                    "properties": {
-                                        "__escapedIdentifier": {}
-                                    },
-                                    "type": "object"
+                            "properties": {
+                                "__escapedIdentifier": {
+                                    "type": "undefined"
                                 }
-                            ]
+                            },
+                            "type": "object"
                         },
                         {
                             "enum": [
@@ -5887,7 +5886,9 @@
                             "allOf": [
                                 {
                                     "properties": {
-                                        "__escapedIdentifier": {}
+                                        "__escapedIdentifier": {
+                                            "type": "undefined"
+                                        }
                                     },
                                     "type": "object"
                                 },
@@ -5897,15 +5898,12 @@
                             ]
                         },
                         {
-                            "allOf": [
-                                {},
-                                {
-                                    "properties": {
-                                        "__escapedIdentifier": {}
-                                    },
-                                    "type": "object"
+                            "properties": {
+                                "__escapedIdentifier": {
+                                    "type": "undefined"
                                 }
-                            ]
+                            },
+                            "type": "object"
                         },
                         {
                             "enum": [

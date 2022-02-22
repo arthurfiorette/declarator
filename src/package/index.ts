@@ -1,5 +1,5 @@
 import path from 'path';
-import { defaultOptions } from '../config/defaults';
+import { DEFAULT_OPTIONS } from '../config/defaults';
 import type { PackageConfig } from '../config/types';
 import { hasNpmPackage } from '../npm/api';
 import { log } from '../util/log';
@@ -32,6 +32,7 @@ export async function processPackage(
 
   if (!config.ignoreDtCheck) {
     const existsTypes = await hasNpmPackage(`@types/${name}`);
+
     if (existsTypes) {
       log.warn`An @types/${name} package is available!\n Install it at https://npmjs.com/package/@types/${name}. Use ignoreDtCheck to hide this warning.`;
       return false;
@@ -44,8 +45,8 @@ export async function processPackage(
     await editPackageJson(pkgDir, (atual) => {
       const main = atual.main?.replace(/js$/, 'd.ts') || 'index.d.ts';
       const outDir =
-        packageInfo.compilerOptions?.outDir ||
-        defaultOptions.defaults.compilerOptions.outDir;
+        packageInfo.compilerOptions?.outDir ??
+        DEFAULT_OPTIONS.defaults.compilerOptions.outDir;
 
       return { ...atual, types: path.join(outDir, main) };
     });

@@ -1,7 +1,6 @@
-import merge from 'lodash.merge';
-import path from 'path';
+import path from 'node:path';
 import { log } from '../util/log';
-import { defaultOptions } from './defaults';
+import { DEFAULT_OPTIONS } from './defaults';
 import type { Configuration, FileConfig } from './types';
 
 /**
@@ -55,7 +54,7 @@ export async function readConfig(
     // no config found.
     log.info`No config file could be found. Tried (${possibleFilenames})`;
 
-    return defaultOptions;
+    return DEFAULT_OPTIONS;
   }
 }
 
@@ -67,5 +66,6 @@ export async function readConfig(
  */
 export function parseConfig(config: Partial<FileConfig>): Configuration {
   const read = typeof config === 'function' ? config() : config;
-  return merge(defaultOptions, read);
+
+  return { ...DEFAULT_OPTIONS, ...read };
 }

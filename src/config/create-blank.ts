@@ -1,15 +1,14 @@
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 import { log } from '../util/log';
 import { possibleFilenames } from './reader';
 
-const blankConfig = `/* eslint-env node */
-
+const blankConfig = `
 module.exports = () => ({
   // All packages that should be typed
   packages: [],
 
-  // All default configs
+  // Default configuration for all packages
   defaults: {}
 });
 `;

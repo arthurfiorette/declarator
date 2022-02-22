@@ -1,4 +1,4 @@
-import childProcess, { ExecException, ExecOptions } from 'child_process';
+import childProcess, { ExecException, ExecOptions } from 'node:child_process';
 
 type CommandResult =
   | [stdout: string, error: null]
