@@ -13,10 +13,10 @@
     "version": "npm run generate-schema && git add schema.json && auto-changelog -p && git add CHANGELOG.md"
   },
   "license": "MIT",
-  "author": "Arthur Fiorette",
-  "repository": "https://github.com/ArthurFiorette/declarator.git",
-  "bugs": "https://github.com/ArthurFiorette/declarator/issues",
-  "homepage": "https://github.com/ArthurFiorette/declarator#readme",
+  "author": "Arthur Fiorette <npm@arthur.place>",
+  "repository": "https://github.com/arthurfiorette/declarator.git",
+  "bugs": "https://github.com/arthurfiorette/declarator/issues",
+  "homepage": "https://github.com/arthurfiorette/declarator#readme",
   "dependencies": {
     "commander": "^9.0.0",
     "resolve-package-path": "^4.0.3",

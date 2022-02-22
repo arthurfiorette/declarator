@@ -105,9 +105,9 @@ dependency.sum(1);
 Declarator, make your development process faster and more reliable while working with
 unknown, undocumented and/or untyped javascript code. This automatically generate
 declaration files, basically using `tsc --emitDeclarationOnly` for all dependencies that
-you specify in the config file. Say _never again_ to write a bunch of
-`export declare module 'name';` in a types.d.ts. But keep in mind that you'll find some
-`any` types in the progress.
+you specify in the config file.
+
+You'll never have to write a bunch of `export declare module 'name';` in a `types.d.ts`. But keep in mind that you'll find some `any`ies in the progress.
 
 <br />
 
@@ -118,9 +118,6 @@ you specify in the config file. Say _never again_ to write a bunch of
 - [Running](#running)
 - [Configuration](#configuration)
   - [Config examples:](#config-examples)
-    - [Example Javascript](#example-javascript)
-    - [Example Json](#example-json)
-    - [Example Package.json](#example-packagejson)
 - [License](#license)
 - [Contact](#contact)
 
@@ -197,12 +194,10 @@ project root and follow one of these names:
 
 The configuration format is specified by the [Configuration](src/config/types.ts) type.
 
-> JsonSchema and JSDoc for auto completion are available too!
+> JsonSchema and JSDoc for auto completion are also available!
 
 <details>
   <summary><code>declarator.js</code>, <code>.declarator.js</code>, or <code>.declaratorrc.js</code></summary>
-
-##### [Example Javascript](examples/config-example.js)
 
 ```js
 //@ts-check
@@ -244,8 +239,6 @@ module.exports = config;
 <details>
   <summary><code>declarator.json</code>, <code>.declarator.json</code>, <code>.declaratorrc</code> or <code>.declaratorrc.json</code></summary>
 
-##### [Example Json](examples/config-example.jsonc)
-
 ```jsonc
 {
   // WARN: Comments are not allowed in json files!
@@ -279,8 +272,6 @@ module.exports = config;
 
 <details>
   <summary><code>package.json</code></summary>
-
-##### [Example Package.json](examples/config-config-example-package.jsonc)
 
 ```jsonc
 {
@@ -327,7 +318,7 @@ Licensed under the **MIT**. See [`LICENSE`](LICENSE) for more informations.
 
 ## Contact
 
-See my contact information on my [github profile](https://github.com/ArthurFiorette) or
+See my contact information on my [github profile](https://github.com/arthurfiorette) or
 open a new issue.
 
 <br />
