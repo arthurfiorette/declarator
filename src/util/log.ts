@@ -17,7 +17,8 @@ type LogArguments =
 
 const describeValue = (value: LogArguments): string => {
   if (Array.isArray(value)) return value.map((value) => describeValue(value)).join(', ');
-  if (value instanceof Error) return value.message + '\n' + value.stack;
+  if (value instanceof Error)
+    return `${value.message}\n${value.stack || 'No stack trace available'}`;
   if (typeof value === 'object') return JSON.stringify(value, null, 2);
   return String(value);
 };
