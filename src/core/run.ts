@@ -1,4 +1,3 @@
-import merge from 'lodash.merge';
 import { parseConfig, readConfig } from '../config';
 import { processPackage } from '../package';
 import { log } from '../util/log';
@@ -15,14 +14,16 @@ export async function run(): Promise<void> {
   const promises = packages.map((pkg) => {
     if (Array.isArray(pkg)) {
       const [name, config] = pkg;
-      return processPackage(name, config.merge ? merge(defaults, config) : config);
+
+      return processPackage(name, config.merge ? { ...defaults, ...config } : config);
     }
+
     return processPackage(pkg, defaults);
   });
 
   const results = await Promise.all(promises);
 
-  log.info`Generated types for ${
-    results.filter((r) => !!r).length + ''
-  } package(s) out of ${packages.length}.`;
+  log.info`Generated types for ${results.filter((r) => !!r).length} package(s) out of ${
+    packages.length
+  }.`;
 }

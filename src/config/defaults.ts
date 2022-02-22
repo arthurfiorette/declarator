@@ -1,6 +1,6 @@
-import { Configuration } from './types';
+import type { Configuration } from './types';
 
-export const DEFAULT_OPTIONS: Configuration = {
+export const DEFAULT_OPTIONS = {
   packages: [],
   defaults: {
     merge: false,
@@ -18,3 +18,5 @@ export const DEFAULT_OPTIONS: Configuration = {
     } as const
   }
 };
+
+export const __expectDefaultIsConfiguration: Configuration = DEFAULT_OPTIONS;

@@ -23,13 +23,11 @@ export const possibleFilenames = [
  * @param directory The directory to find the file
  * @returns The read config or a newly created one
  */
-export async function readConfig(
-  directory = process.cwd()
-): Promise<Partial<FileConfig>> {
+export async function readConfig(directory = process.cwd()): Promise<FileConfig> {
   for (const possibleFile of possibleFilenames) {
     const name = path.join(directory, possibleFile);
     try {
-      return require(name);
+      return import(name) as Promise<FileConfig>;
     } catch {
       log.debug`${name} could not be found.`;
       // no empty block
@@ -40,8 +38,8 @@ export async function readConfig(
   // Try finding it at package.json
   const packagePath = path.join(directory, 'package.json');
   try {
-    const packageJson = await require(packagePath);
-    const declarator = packageJson['declarator'];
+    const packageJson = (await import(packagePath)) as Record<string, unknown>;
+    const declarator = packageJson['declarator'] as Configuration;
 
     if (!declarator) {
       log.debug`${packagePath} does not contain a declarator section.`;
@@ -64,7 +62,7 @@ export async function readConfig(
  * @param config The partial config that was read
  * @returns The complete config merged with defaults
  */
-export function parseConfig(config: Partial<FileConfig>): Configuration {
+export function parseConfig(config: FileConfig): Configuration {
   const read = typeof config === 'function' ? config() : config;
 
   return { ...DEFAULT_OPTIONS, ...read };

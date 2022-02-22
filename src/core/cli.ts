@@ -2,7 +2,7 @@
 
 import { createBlackConfig } from '../config/create-blank';
 import { log } from '../util/log';
-import { createProgram } from './program';
+import { CliOpts, createProgram } from './program';
 import { run } from './run';
 
 (async () => {
@@ -10,7 +10,7 @@ import { run } from './run';
 
   program.parse(process.argv);
 
-  const { debug, init } = program.opts();
+  const { debug, init } = program.opts<CliOpts>();
 
   if (!debug) {
     log.debug = () => undefined;
