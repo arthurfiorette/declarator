@@ -18,7 +18,7 @@
   "bugs": "https://github.com/arthurfiorette/declarator/issues",
   "homepage": "https://github.com/arthurfiorette/declarator#readme",
   "dependencies": {
-    "commander": "^9.0.0",
+    "commander": "^10.0.0",
     "resolve-package-path": "^4.0.3",
     "rimraf": "^3.0.2",
     "tslib": "^2.3.1",
