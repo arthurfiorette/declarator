@@ -1,3 +1,5 @@
+# Deprecated - please use https://github.com/microsoft/dts-gen
+
 <br />
 <div align="center">
   <pre>
